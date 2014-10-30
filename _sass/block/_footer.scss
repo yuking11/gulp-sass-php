@@ -1,0 +1,14 @@
+// =====================================================
+//
+// Footer Style
+//
+// =====================================================
+
+/* footer
+--------------------------------------------- */
+#footer {
+	@if $type == all {// set All Devices and SmartPhone
+	} @else if $type == tab {// set Tablet
+	} @else if $type == pc {// set PC
+	}// @if
+}// #footer

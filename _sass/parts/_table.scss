@@ -1,0 +1,17 @@
+//=====================================================
+//
+// Table Style
+//
+// =====================================================
+
+/* type 1
+--------------------------------------------- */
+.table {
+	@if $type == all {// set All Devices and SmartPhone
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 1px;
+	} @else if $type == tab {// set Tablet
+	} @else if $type == pc {// set PC
+	}// @if
+}// .table

@@ -1,0 +1,48 @@
+// gradient
+//--------------------------------------------- */
+
+// gradient top to bottom
+@mixin grad_top($color1: #EFEFEF, $color2: #FFF, $stop1: 0%, $stop2: 100%){
+	background-color: $color1;
+	@if $support_ie8 {
+		@include filter-gradient($color1, $color2, vertical);
+	}
+	@include background-image(linear-gradient(top, $color1 $stop1, $color2 $stop2));
+}
+@mixin grad_top_light($color: #EFEFEF, $lighten: 10%){
+	background-color: $color;
+	@if $support_ie8 {
+		@include filter-gradient(lighten($color, $lighten), $color, vertical);
+	}
+	@include background-image(linear-gradient(lighten($color, $lighten) 0%, $color 100%));
+}
+@mixin grad_top_dark($color: #FFF, $darken: 10%){
+	background-color: $color;
+	@if $support_ie8 {
+		@include filter-gradient(darken($color, $darken), $color, vertical);
+	}
+	@include background-image(linear-gradient(darken($color, $darken) 0%, $color 100%));
+}
+
+// gradient left to right
+@mixin grad_left($color1: #EFEFEF, $color2: #FFF, $stop1: 0%, $stop2: 100%){
+	background-color: $color1;
+	@if $support_ie8 {
+		@include filter-gradient($color1, $color2, horizontal);
+	}
+	@include background-image(linear-gradient(left, $color1 $stop1, $color2 $stop2));
+}
+@mixin grad_left_light($color: #EFEFEF, $lighten: 10%){
+	background-color: $color;
+	@if $support_ie8 {
+		@include filter-gradient(lighten($color, $lighten), $color, horizontal);
+	}
+	@include background-image(linear-gradient(left, lighten($color, $lighten) 0%, $color 100%));
+}
+@mixin grad_left_dark($color: #FFF, $darken: 10%){
+	background-color: $color;
+	@if $support_ie8 {
+		@include filter-gradient(darken($color, $darken), $color, horizontal);
+	}
+	@include background-image(linear-gradient(left, darken($color, $darken) 0%, $color 100%));
+}

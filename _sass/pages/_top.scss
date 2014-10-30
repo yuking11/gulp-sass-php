@@ -1,0 +1,14 @@
+// =====================================================
+//
+// TOPページ Style
+//
+// =====================================================
+
+/* top_page
+--------------------------------------------- */
+#top_page {
+	@if $type == all {// set All Devices and SmartPhone
+	} @else if $type == tab {// set Tablet
+	} @else if $type == pc {// set PC
+	}// @if
+}// #top_page

@@ -1,0 +1,27 @@
+// animation
+//--------------------------------------------- */
+
+// transition
+@mixin transition($duration: 1){
+	-webkit-transition: ($duration + s) ease-out;
+	-moz-transition: ($duration + s) ease-out;
+	-ms-transition: ($duration + s) ease-out;
+	transition: ($duration + s) ease-out;
+}
+
+@mixin keyframes($name){
+	@-webkit-keyframes $name {
+		@content;
+	}
+	@-moz-keyframes $name {
+		@content;
+	}
+	@keyframes $name {
+		@content;
+	}
+}
+@mixin animation($name, $duration, $timing, $delay, $count, $direction: null) {
+	@each $prefix in $set_prefix {
+		#{$prefix}#{animation}: $name $duration $timing $delay $count $direction;
+	}
+}

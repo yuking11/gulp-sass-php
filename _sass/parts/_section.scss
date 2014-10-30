@@ -1,0 +1,41 @@
+//=====================================================
+//
+// Section Style
+//
+// =====================================================
+
+/* Section
+--------------------------------------------- */
+.section {
+	@if $type == all {// set All Devices and SmartPhone
+		margin: ($base_mg * 2) 0;
+		&:first-child {
+			margin-top: 0;
+		}// &:first-child
+		&:last-child {
+			margin-bottom: 0;
+		}// &:last-child
+		.section--child + .section--child {
+			margin-top: $base_mg;
+		}// .section--child + .section--child
+	} @else if $type == tab {// set Tablet
+	} @else if $type == pc {// set PC
+	}// @if
+}// .section
+
+.section--side {
+	@if $type == all {// set All Devices and SmartPhone
+		margin: $base_mg 0;
+		&:first-child {
+			margin-top: 0;
+		}// &:first-child
+		&:last-child {
+			margin-bottom: 0;
+		}// &:last-child
+		.section--child + .section--child {
+			margin-top: $base_mg * .5;
+		}// .section--child + .section--child
+	} @else if $type == tab {// set Tablet
+	} @else if $type == pc {// set PC
+	}// @if
+}// .section--side

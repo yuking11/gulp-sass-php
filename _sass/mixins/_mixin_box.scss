@@ -1,0 +1,20 @@
+// box style
+//--------------------------------------------- */
+
+// box-sizing
+@mixin box($type: border-box) {
+	@each $prefix in $set_prefix {
+		#{$prefix}box-sizing: $type;
+	}
+}
+
+// box-shadow
+@mixin boxsh($param1: 0px 0px 5px #CCC, $param2: false) {
+	@each $prefix in $set_prefix {
+		@if($param2){
+			#{$prefix}box-shadow: $param1 $param2;
+		} @else {
+			#{$prefix}box-shadow: $param1;
+		}
+	}
+}

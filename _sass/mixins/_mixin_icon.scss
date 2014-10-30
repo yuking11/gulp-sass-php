@@ -1,0 +1,56 @@
+// icon style
+//--------------------------------------------- */
+
+// circle
+@mixin circle($size){
+	width: $size + px;
+	height: $size + px;
+	@include border-radius(100%);
+}
+
+// arrow
+@mixin arw_default($direction: right, $size: 10, $color: #000){
+	$set: left;
+	@if $direction == left {
+		$set: right;
+	} @elseif $direction == top {
+		$set: bottom;
+	} @elseif $direction == bottom {
+		$set: top;
+	} @else {
+		$set: left;
+	}
+	$size: round($size / 2);
+	width: 0;
+	height: 0;
+	border: $size + px solid transparent;
+	border-#{$set}-color: $color;
+}
+@mixin arw_l($size: 10, $color: #000, $pos: 0, $space: 10){
+	position: relative;
+	padding-left: $space + px;
+	&:before {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: $pos;
+		bottom: 0;
+		margin: auto;
+		@include arw_default(right, $size, $color);
+	}
+}
+@mixin arw_r($size: 10, $color: #000, $pos: 0, $space: 10){
+	position: relative;
+	padding-right: $space + px;
+	&:before {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 0;
+		right: $pos;
+		bottom: 0;
+		margin: auto;
+		@include arw_default(right, $size, $color);
+	}
+}
