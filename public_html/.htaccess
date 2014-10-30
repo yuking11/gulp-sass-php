@@ -4,4 +4,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
 RewriteCond %{THE_REQUEST} ^.*/index.php
-RewriteRule ^(.*)index.html$ http://kakomons.private.s-rep.net/$1 [R=301,L]
+RewriteRule ^(.*)index.html$ http://www.example.com/$1 [R=301,L]
