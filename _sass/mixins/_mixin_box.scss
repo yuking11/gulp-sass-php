@@ -9,7 +9,7 @@
 }
 
 // box-shadow
-@mixin boxsh($param1: 0px 0px 5px #CCC, $param2: false) {
+@mixin bs($param1: 0px 0px 5px #CCC, $param2: false) {
 	@each $prefix in $set_prefix {
 		@if($param2){
 			#{$prefix}box-shadow: $param1 $param2;

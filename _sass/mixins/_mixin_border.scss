@@ -4,9 +4,9 @@
 // border-radius
 @mixin rds($size: 5, $size2: false, $size3: false, $size4: false) {
 	@if $size2 {
-		@include border-radius($size + px $size2 + px $size3 + px $size4 + px);
+		@include border-radius($size $size2 $size3 $size4);
 	} @else {
-		@include border-radius($size + px);
+		@include border-radius($size);
 	}
 }
 

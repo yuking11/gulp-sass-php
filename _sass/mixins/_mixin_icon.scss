@@ -5,52 +5,84 @@
 @mixin circle($size){
 	width: $size + px;
 	height: $size + px;
+	text-align: center;
 	@include border-radius(100%);
 }
 
 // arrow
-@mixin arw_default($direction: right, $size: 10, $color: #000){
-	$set: left;
-	@if $direction == left {
-		$set: right;
-	} @elseif $direction == top {
-		$set: bottom;
-	} @elseif $direction == bottom {
-		$set: top;
-	} @else {
-		$set: left;
+@mixin arw_default($direction: right, $size: 6, $color: #000, $reverse: normal){
+	$set1: left;
+	$set2: top;
+	$set3: bottom;
+	$size2: (($size * 4) / 3) / 2;
+	@if $reverse == "square" {
+		$size2: $size;
+	} @elseif $reverse == "reverse" {
+		$size2: (($size * 3) / 4) / 2;
 	}
-	$size: round($size / 2);
+	@if $direction == left {
+		$set1: right;
+		$set2: top;
+		$set3: bottom;
+	} @elseif $direction == top {
+		$set1: bottom;
+		$set2: right;
+		$set3: left;
+	} @elseif $direction == bottom {
+		$set1: top;
+		$set2: right;
+		$set3: left;
+	} @else {
+		$set1: left;
+		$set2: top;
+		$set3: bottom;
+	}
+	//$size: round($size / 2);
 	width: 0;
 	height: 0;
 	border: $size + px solid transparent;
-	border-#{$set}-color: $color;
+	border-#{$set1}-color: $color;
+	border-#{$set2}-width: $size2 + px;
+	border-#{$set3}-width: $size2 + px;
 }
-@mixin arw_l($size: 10, $color: #000, $pos: 0, $space: 10){
+@mixin arw_t($size: 10, $color: #000, $pos: 0, $space: 10){
 	position: relative;
-	padding-left: $space + px;
-	&:before {
+	padding-top: $space + px;
+	&::before {
 		display: block;
 		content: "";
 		position: absolute;
-		top: 0;
-		left: $pos;
-		bottom: 0;
-		margin: auto;
-		@include arw_default(right, $size, $color);
+		top: $pos;
+		right: 0;
+		left: 0;
+		margin: ($size * -1 + px) auto auto;
+		@include arw_default(top, $size, $color);
 	}
 }
 @mixin arw_r($size: 10, $color: #000, $pos: 0, $space: 10){
 	position: relative;
 	padding-right: $space + px;
-	&:before {
+	&::before {
 		display: block;
 		content: "";
 		position: absolute;
 		top: 0;
 		right: $pos;
 		bottom: 0;
-		margin: auto;
+		margin: auto ($size * -1 + px) auto auto;
 		@include arw_default(right, $size, $color);
 	}
 }
+@mixin arw_l($size: 10, $color: #000, $pos: 0, $space: 10){
+	position: relative;
+	padding-left: $space + px;
+	&::before {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: $pos;
+		bottom: 0;
+		margin: auto auto auto ($size * -1 + px);
+		@include arw_default(right, $size, $color);
+	}

@@ -32,7 +32,7 @@
 }
 
 // link
-@mixin txtlink($base: $link_color_primary, $hover: $link_color_hover, $visited: $link_color_visited, $active: $link_color_active) {
+@mixin tl($base: $link_color_primary, $hover: $link_color_hover, $visited: $link_color_visited, $active: $link_color_active) {
 	color: $base;
 	&:hover {
 		color: $hover !important;
@@ -43,4 +43,4 @@
 	&:active {
 		color: $active;
 	}// &:active
-}// .txtlink
+}// .tl

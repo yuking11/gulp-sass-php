@@ -29,9 +29,8 @@
 	bottom: $bottom;
 	left: $left;
 }
-
 //　center
-@mixin middle($top: 0, $right: 0, $bottom: 0, $left: 0) {
+@mixin poa_mid($top: 0, $right: 0, $bottom: 0, $left: 0) {
 	position: absolute;
 	top: $top;
 	right: $right;
