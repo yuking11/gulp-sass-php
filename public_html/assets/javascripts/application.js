@@ -31,15 +31,15 @@ jQuery(document).ready(function ($) {
 		$('a[href*=#]').on('click', function() {
 			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 				var $target = $(this.hash),
-				self = $(this);
+				$self = $(this);
 				$target = $target.length && $target || $('[name="' + this.hash.slice(1) +'"]');
-				if( self.attr('data-href') === 'page_top') {
+				if( $self.attr('data-href') === 'page_top') {
 					var targetOffset = 0;
 				} else {
 					var targetOffset = $target.offset().top;
 				}
 				$('html,body').animate({scrollTop: targetOffset}, 500);
-				$(this).blur();
+				$self.blur();
 				return false;
 			}
 		});
