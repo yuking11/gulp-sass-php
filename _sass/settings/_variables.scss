@@ -10,8 +10,8 @@
 // Browser support
 $support_ie6: false;
 $support_ie7: false;
-$support_ie8: true;
-$support_ie9: true;
+$support_ie8: false;
+$support_ie9: false;
 @if (not $support_ie8) and $support_ie9 {
 	$experimental-support-for-svg: true;
 }
@@ -55,7 +55,7 @@ $font_family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 $line_height: 1.6;
 
 // element margin
-$base_mg: 1em;
+$base_mg: 10px;
 
 // element padding
-$base_pd: 1em;
+$base_pd: 10px;

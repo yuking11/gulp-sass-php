@@ -113,6 +113,7 @@
 				- _html_header.php // <!DOCTYPE html> ~ </head>
 				- _nav.php
 				- _side.php
+				- _start_of_body.php
 				- site_config.php // サイト設定
 			- ■ javascripts
 				- ■ libs // 各種ライブラリ格納
@@ -220,8 +221,8 @@
 	include_once(dirname(__FILE__) . "/assets/include/_html_header.php");
 ?>
 <body>
-
 <?php
+	include_once(dirname(__FILE__) . "/assets/include/_start_of_body.php");
 	include_once(dirname(__FILE__) . "/assets/include/_header.php");
 	include_once(dirname(__FILE__) . "/assets/include/_gnav.php");
 ?>

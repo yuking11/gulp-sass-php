@@ -9,9 +9,9 @@
 	include_once(dirname(__FILE__) . "/assets/include/site_config.php");
 	include_once(dirname(__FILE__) . "/assets/include/_html_header.php");
 ?>
-<body>
-
+<body class="<?php echo 'body_' . $slug; ?>">
 <?php
+	include_once(dirname(__FILE__) . "/assets/include/_start_of_body.php");
 	include_once(dirname(__FILE__) . "/assets/include/_header.php");
 	include_once(dirname(__FILE__) . "/assets/include/_gnav.php");
 ?>

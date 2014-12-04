@@ -72,8 +72,8 @@ input[type="password"], textarea {
 	border: solid 1px #CCC;
 	border-right: none;
 	border-bottom: none;
-	@include rds(3);
-	@include boxsh(1px 1px 3px rgba(0, 0, 0, .2), inset);
+	@include rds(3px);
+	@include bs(1px 1px 3px rgba(0, 0, 0, .2), inset);
 }
 input[type="radio"],
 input[type="checkbox"] {
