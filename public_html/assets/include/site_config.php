@@ -22,21 +22,21 @@
   define("HTTP", $base_url);
 
   $current_url = $base_url . $_SERVER['REQUEST_URI'];
-  define("CURRENTURL", htmlspecialchars($current_url, ENT_QUOTES));
+  define("CURRENT_URL", htmlspecialchars($current_url, ENT_QUOTES));
 
   /*
    * 関数
   */
   function home_url( $atts ) {
-    if( isset($atts) ){
+    if( !empty($atts) ){
       $url = HTTP . $atts;
     } else {
       $url = HTTP;
     }
     return $url;
   }
-  function get_template_directory_uri() {
-    if( isset($atts) ){
+  function get_template_directory_uri( $atts ) {
+    if( !empty($atts) ){
       $url = HTTP . '/assets' . $atts;
     } else {
       $url = HTTP . '/assets';
@@ -51,7 +51,16 @@
   /*
    * サイト設定
   */
-	// regacy support
-	$regacy_IE = false;
+
+  // regacy support
+  $regacy_IE = false;
+
+	// body class
+  if( isset($slug_child) ){
+    $body_class = $slug . '__' . $slug_child;
+  } else {
+    $body_class = $slug;
+  }
+  define('PAGE_NAME', htmlspecialchars($body_class, ENT_QUOTES));
 
 ?>
