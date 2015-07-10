@@ -7,43 +7,44 @@ jQuery(document).ready(function ($) {
 
 	// 画像ロールオーバー
 	/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-	var preLoadImg = new Object();
-	function initRollOvers(){
-		$("img.over, input.over").each(function(){
-			var imgSrc = this.src;
-			var sep = imgSrc.lastIndexOf('.');
-			var onSrc = imgSrc.substr(0, sep) + '_on' + imgSrc.substr(sep, 4);
-			preLoadImg[imgSrc] = new Image();
-			preLoadImg[imgSrc].src = onSrc;
-			$(this).hover(
-				function() { this.src = onSrc; },
-				function() { this.src = imgSrc; }
-			);
-		});
-	}
-	$(function(){
-		initRollOvers();
-	});
+  var preLoadImg = {};
+  function initRollOvers(){
+    $('.over').each(function(){
+      var imgSrc = this.src;
+      var sep = imgSrc.lastIndexOf('.');
+      var onSrc = imgSrc.substr(0, sep) + '_on' + imgSrc.substr(sep, 4);
+      preLoadImg[imgSrc] = new Image();
+      preLoadImg[imgSrc].src = onSrc;
+      $(this).on({
+        'mouseenter touchstart':function(){
+          this.src = onSrc;
+        },
+        'mouseleave touchend':function(){
+          this.src = imgSrc;
+        }
+      });
+    });
+  }
+  $(function(){
+    initRollOvers();
+  });
 
 	// スムーズスクロール
 	/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-	$(function(){
-		$('a[href*=#]').on('click', function() {
-			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-				var $target = $(this.hash),
-				$self = $(this);
-				$target = $target.length && $target || $('[name="' + this.hash.slice(1) +'"]');
-				if( $self.attr('data-href') === 'page_top') {
-					var targetOffset = 0;
-				} else {
-					var targetOffset = $target.offset().top;
-				}
-				$('html,body').animate({scrollTop: targetOffset}, 500);
-				$self.blur();
-				return false;
-			}
-		});
-	});
+  $(function(){
+    $('[data-anchor]').on('click', function() {
+      var $self        = $(this),
+          $menuHeight  = $('#c_nav').outerHeight(),
+          $target      = $self.attr('data-anchor'),
+          targetOffset = 0;
+      if( $target[0] && $target !== 'page_top') {
+        targetOffset = $('[data-anchor-target="'+ $target +'"]').offset().top - $menuHeight;
+      }
+      $('html,body').animate({scrollTop: targetOffset}, 500);
+      $self.blur();
+      return false;
+    });// end function.onClick
+  });// end function
 
 	////////////////////////////////////////////////////////////
 	//
