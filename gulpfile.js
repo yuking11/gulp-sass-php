@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var compass = require('gulp-compass');
+var autoprefixer = require("gulp-autoprefixer");
 var cssmin = require('gulp-cssmin');
 var plumber = require('gulp-plumber');
 var uglify = require('gulp-uglify');
@@ -14,7 +15,6 @@ gulp.task('default', ['browser-sync', 'watch']);
 gulp.task('watch', function() {
   //gulp.watch('./_sass/**/*.scss', ['compass']);
   gulp.watch('./_sass/**/*.scss', function(event) { gulp.run('compass'); });
-  gulp.watch(public + '/assets/stylesheets/*.css', function(event) { gulp.run('cssmin'); });
   gulp.watch(public + '/assets/javascripts/*.js', ['scripts']);
   gulp.watch(public + '/**/*.php', ['html']);
 });
@@ -24,6 +24,7 @@ gulp.task('scripts', function() {
   gulp.src(public + '/assets/javascripts/application.js')
   //gulp.src(public + '/assets/javascripts/**/*.js')
     //.pipe(concat('application.js'))
+    .pipe(plumber())
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(public + '/assets/javascripts'))
@@ -33,6 +34,7 @@ gulp.task('scripts', function() {
 // compass
 gulp.task('compass', function(){
   gulp.src('_sass/**/*.scss')
+    .pipe(plumber())
     .pipe(compass({
       config_file: 'config.rb',
       comments: false,
@@ -44,13 +46,17 @@ gulp.task('compass', function(){
       console.log(error);
       this.emit('end');
     })
+    //.pipe(filter('**/*.css'))// cssのみを取り出す
+    .pipe(autoprefixer({
+      browsers: ['last 3 versions', 'android >= 2.1']
+    }))
     .pipe(gulp.dest(public + '/assets/stylesheets'))
     .pipe(browserSync.reload({stream: true}));
 });
 
 // css-min
 gulp.task('cssmin', function () {
-  gulp.src(public + '/assets/stylesheets/*.css')
+  gulp.src(public + '/assets/stylesheets/application.css')
   .pipe(cssmin())
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest(public + '/assets/stylesheets'));
@@ -59,6 +65,7 @@ gulp.task('cssmin', function () {
 // HTML
 gulp.task('html', function() {
   gulp.src(public + '/**/*.php')
+    .pipe(plumber())
     .pipe(browserSync.reload({stream: true}));
 });
 

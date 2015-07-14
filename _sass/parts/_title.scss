@@ -7,29 +7,29 @@
 /* main
 --------------------------------------------- */
 .ttl_main {
-	@if $type == all {// set All Devices and SmartPhone
-		width: 100%;
-	} @else if $type == tab {// set Tablet
-	} @else if $type == pc {// set PC
-	}// @if
+  @if $type == all {// set All Devices and SmartPhone
+    width: 100%;
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
 }// .ttl_main
 
 /* sub
 --------------------------------------------- */
 .ttl_sub {
-	@if $type == all {// set All Devices and SmartPhone
-		width: 100%;
-	} @else if $type == tab {// set Tablet
-	} @else if $type == pc {// set PC
-	}// @if
+  @if $type == all {// set All Devices and SmartPhone
+    width: 100%;
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
 }// .ttl_sub
 
 /* detail
 --------------------------------------------- */
 .ttl_detail {
-	@if $type == all {// set All Devices and SmartPhone
-		width: 100%;
-	} @else if $type == tab {// set Tablet
-	} @else if $type == pc {// set PC
-	}// @if
+  @if $type == all {// set All Devices and SmartPhone
+    width: 100%;
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
 }// .ttl_detail

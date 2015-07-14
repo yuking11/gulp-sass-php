@@ -573,7 +573,6 @@ UTILITY
   visibility: hidden;
   opacity: 0;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -648,7 +647,6 @@ UTILITY
   max-height: 100%;
   overflow: auto;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* https://bugzilla.mozilla.org/show_bug.cgi?id=308801 */
 }
@@ -677,28 +675,20 @@ UTILITY
 .nivo-lightbox-notouch .nivo-lightbox-effect-slideDown,
 .nivo-lightbox-notouch .nivo-lightbox-effect-fall {
   -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
 /* fadeScale */
 .nivo-lightbox-effect-fadeScale .nivo-lightbox-wrap {
   -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
   -webkit-transform: scale(0.7);
-  -moz-transform: scale(0.7);
   -ms-transform: scale(0.7);
   transform: scale(0.7);
 }
 
 .nivo-lightbox-effect-fadeScale.nivo-lightbox-open .nivo-lightbox-wrap {
   -webkit-transform: scale(1);
-  -moz-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
@@ -709,22 +699,17 @@ UTILITY
 .nivo-lightbox-effect-slideUp .nivo-lightbox-wrap,
 .nivo-lightbox-effect-slideDown .nivo-lightbox-wrap {
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  -moz-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  -ms-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  -o-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
   transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
 
 .nivo-lightbox-effect-slideLeft .nivo-lightbox-wrap {
   -webkit-transform: translateX(-10%);
-  -moz-transform: translateX(-10%);
   -ms-transform: translateX(-10%);
   transform: translateX(-10%);
 }
 
 .nivo-lightbox-effect-slideRight .nivo-lightbox-wrap {
   -webkit-transform: translateX(10%);
-  -moz-transform: translateX(10%);
   -ms-transform: translateX(10%);
   transform: translateX(10%);
 }
@@ -732,21 +717,18 @@ UTILITY
 .nivo-lightbox-effect-slideLeft.nivo-lightbox-open .nivo-lightbox-wrap,
 .nivo-lightbox-effect-slideRight.nivo-lightbox-open .nivo-lightbox-wrap {
   -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
 }
 
 .nivo-lightbox-effect-slideDown .nivo-lightbox-wrap {
   -webkit-transform: translateY(-10%);
-  -moz-transform: translateY(-10%);
   -ms-transform: translateY(-10%);
   transform: translateY(-10%);
 }
 
 .nivo-lightbox-effect-slideUp .nivo-lightbox-wrap {
   -webkit-transform: translateY(10%);
-  -moz-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
 }
@@ -754,7 +736,6 @@ UTILITY
 .nivo-lightbox-effect-slideUp.nivo-lightbox-open .nivo-lightbox-wrap,
 .nivo-lightbox-effect-slideDown.nivo-lightbox-open .nivo-lightbox-wrap {
   -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
@@ -762,25 +743,19 @@ UTILITY
 /* fall */
 .nivo-lightbox-body-effect-fall .nivo-lightbox-effect-fall {
   -webkit-perspective: 1000px;
-  -moz-perspective: 1000px;
   perspective: 1000px;
 }
 
 .nivo-lightbox-effect-fall .nivo-lightbox-wrap {
   -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   -webkit-transform: translateZ(300px);
-  -moz-transform: translateZ(300px);
   -ms-transform: translateZ(300px);
   transform: translateZ(300px);
 }
 
 .nivo-lightbox-effect-fall.nivo-lightbox-open .nivo-lightbox-wrap {
   -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -819,12 +794,14 @@ UTILITY
 
 .nivo-lightbox-theme-default .nivo-lightbox-prev {
   background-image: url(../images/nivo_lightbox/prev.png);
-  border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+          border-radius: 0 3px 3px 0;
 }
 
 .nivo-lightbox-theme-default .nivo-lightbox-next {
   background-image: url(../images/nivo_lightbox/next.png);
-  border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+          border-radius: 3px 0 0 3px;
 }
 
 .nivo-lightbox-theme-default .nivo-lightbox-close {
@@ -843,13 +820,13 @@ UTILITY
 /*
 .nivo-lightbox-theme-default .nivo-lightbox-title-wrap { bottom: -7%; }
 .nivo-lightbox-theme-default .nivo-lightbox-title {
-	font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	background: #000;
-	color: #fff;
-	padding: 7px 15px;
-	border-radius: 30px;
+  font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  background: #000;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 30px;
 }
 */
 .nivo-lightbox-theme-default .nivo-lightbox-title-wrap {
@@ -866,13 +843,13 @@ UTILITY
   font-weight: normal;
   color: #FFF;
   padding: 4px 8px;
-  border-radius: 10px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
 }
 
 .nivo-lightbox-theme-default .nivo-lightbox-image img {
   background: #fff;
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -881,29 +858,32 @@ UTILITY
   background: #fff;
   padding: 40px;
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (min--moz-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+@media (-webkit-min-device-pixel-ratio: 1.3), (min--moz-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   .nivo-lightbox-theme-default .nivo-lightbox-content.nivo-lightbox-loading {
     background-image: url(../images/nivo_lightbox/loading@2x.gif);
-    background-size: 32px 32px;
+    -webkit-background-size: 32px 32px;
+            background-size: 32px 32px;
   }
 
   .nivo-lightbox-theme-default .nivo-lightbox-prev {
     background-image: url(../images/nivo_lightbox/prev@2x.png);
-    background-size: 48px 48px;
+    -webkit-background-size: 48px 48px;
+            background-size: 48px 48px;
   }
 
   .nivo-lightbox-theme-default .nivo-lightbox-next {
     background-image: url(../images/nivo_lightbox/next@2x.png);
-    background-size: 48px 48px;
+    -webkit-background-size: 48px 48px;
+            background-size: 48px 48px;
   }
 
   .nivo-lightbox-theme-default .nivo-lightbox-close {
     background-image: url(../images/nivo_lightbox/close@2x.png);
-    background-size: 16px 16px;
+    -webkit-background-size: 16px 16px;
+            background-size: 16px 16px;
   }
 }
 /* nivo-lightbox
@@ -917,14 +897,13 @@ DEFAULT STYLES
 --------------------------------------------- */
 * {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
-  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   overflow-y: scroll;
   font-size: 1rem;
@@ -936,7 +915,6 @@ body {
   line-height: 1.6;
   font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   word-wrap: break-all;
-  -ms-word-break: break-all;
   word-break: break-all;
 }
 
@@ -979,14 +957,9 @@ input[type="password"], textarea {
   border-right: none;
   border-bottom: none;
   -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
+          border-radius: 3px;
   -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-  -ms-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
 }
 
 input[type="radio"],
@@ -1003,10 +976,8 @@ hr {
   display: block;
   border: 0;
   height: 2px;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #e6e2d9), color-stop(50%, #d2cbbb), color-stop(100%, #e6e2d9));
+  background-image: -webkit-gradient(linear, left top, right top, from(#e6e2d9), color-stop(#d2cbbb), to(#e6e2d9));
   background-image: -webkit-linear-gradient(left, #e6e2d9, #d2cbbb, #e6e2d9);
-  background-image: -moz-linear-gradient(left, #e6e2d9, #d2cbbb, #e6e2d9);
-  background-image: -o-linear-gradient(left, #e6e2d9, #d2cbbb, #e6e2d9);
   background-image: linear-gradient(left, #e6e2d9, #d2cbbb, #e6e2d9);
   margin: 3em 0;
   padding: 0;
@@ -1131,8 +1102,8 @@ html:not(.ie) .ui_input input[type="checkbox"] + label:before {
   border: 1px solid #555555;
 }
 html:not(.ie) .ui_input input[type="radio"] + label:before {
-  -o-border-radius: 30px;
-  border-radius: 30px;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
 }
 html:not(.ie) .ui_input input[type="radio"]:checked + label,
 html:not(.ie) .ui_input input[type="checkbox"]:checked + label {
@@ -1151,7 +1122,8 @@ html:not(.ie) .ui_input input[type="radio"]:checked + label:after {
   height: 8px;
   margin-top: -4px;
   background: #ff9900;
-  border-radius: 8px;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
 }
 html:not(.ie) .ui_input input[type="checkbox"]:checked + label:after {
   left: 3px;
@@ -1161,8 +1133,8 @@ html:not(.ie) .ui_input input[type="checkbox"]:checked + label:after {
   border-left: 3px solid #ff9900;
   border-bottom: 3px solid #ff9900;
   -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 html:not(.ie) .ui_input.ui_input--onlybox {
   width: 20px;
@@ -1233,11 +1205,12 @@ html:not(.ie) .ui_select select {
   margin: 0;
   padding: 0 20px 0 3.75px;
   border: 0 none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   cursor: pointer;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 html:not(.ie) .ui_select select option {
   text-shadow: none;
@@ -1291,6 +1264,48 @@ html:not(.ie) :-moz-any(.ui_select):before {
 --------------------------------------------- */
 /* top_page
 --------------------------------------------- */
+#top_page {
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  background-color: #b75050;
+  background: -webkit-linear-gradient(top, #2ab3dd 0%, #b75050 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#2ab3dd), to(#b75050));
+  background: linear-gradient(to bottom, #2ab3dd 0%, #b75050 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#2ab3dd', EndColorStr='#b75050');
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: normal;
+  display: block;
+  border: 0;
+  height: 2px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e6e2d9), color-stop(#d2cbbb), to(#e6e2d9));
+  background-image: -webkit-linear-gradient(left, #e6e2d9, #d2cbbb, #e6e2d9);
+  background-image: linear-gradient(left, #e6e2d9, #d2cbbb, #e6e2d9);
+  margin: 3em 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 5px #cccccc;
+          box-shadow: 0px 0px 5px #cccccc;
+  -webkit-transform: rotate(1deg);
+      -ms-transform: rotate(1deg);
+          transform: rotate(1deg);
+  -webkit-transition: all 1s ease-out;
+          transition: all 1s ease-out;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: .8;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 /* =====================================================
 
 set Tablet 541px to 769px

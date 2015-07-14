@@ -7,53 +7,53 @@
 /* header
 --------------------------------------------- */
 #header {
-	@if $type == all {// set All Devices and SmartPhone
-		width: 100%;
-	} @else if $type == tab {// set Tablet
-	} @else if $type == pc {// set PC
-	}// @if
+  @if $type == all {// set All Devices and SmartPhone
+    width: 100%;
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
 }// #header
 
 /* nav
 --------------------------------------------- */
 #nav {
-	@if $type == all {// set All Devices and SmartPhone
-		width: 100%;
-	} @else if $type == tab {// set Tablet
-	} @else if $type == pc {// set PC
-	}// @if
+  @if $type == all {// set All Devices and SmartPhone
+    width: 100%;
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
 }// #nav
 
 /* ct_wp > main & side
 --------------------------------------------- */
 #ct_wp {
-	@if $type == all {// set All Devices and SmartPhone
-		width: 100%;
-	} @else if $type == tab {// set Tablet
-		#main, #side {
-			display: table-cell;
-			vertical-align: top;
-		}// #main, #side
-		#side {
-			width: $side_width;
-			padding-right: $ct_margin;
-		}// #side
-		#main + #side {
-			padding: 0 0 0 $ct_margin;
-		}// #main + #side
-	} @else if $type == pc {// set PC
-		#main {
-			width: $main_width;
-		}// #main
-	}// @if
+  @if $type == all {// set All Devices and SmartPhone
+    width: 100%;
+  } @else if $type == tab {// set Tablet
+    #main, #side {
+      display: table-cell;
+      vertical-align: top;
+    }// #main, #side
+    #side {
+      width: $side_width;
+      padding-right: $ct_margin;
+    }// #side
+    #main + #side {
+      padding: 0 0 0 $ct_margin;
+    }// #main + #side
+  } @else if $type == pc {// set PC
+    #main {
+      width: $main_width;
+    }// #main
+  }// @if
 }// #ct_wp
 
 /* footer
 --------------------------------------------- */
 #footer {
-	@if $type == all {// set All Devices and SmartPhone
-		width: 100%;
-	} @else if $type == tab {// set Tablet
-	} @else if $type == pc {// set PC
-	}// @if
+  @if $type == all {// set All Devices and SmartPhone
+    width: 100%;
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
 }// #footer

@@ -11,9 +11,9 @@
 $support_ie6: false;
 $support_ie7: false;
 $support_ie8: false;
-$support_ie9: false;
+$support_ie9: true;
 @if (not $support_ie8) and $support_ie9 {
-	$experimental-support-for-svg: true;
+  $experimental-support-for-svg: true;
 }
 
 // Css config
@@ -25,17 +25,14 @@ $main_width: 760px;
 $side_width: 200px;
 $base_width: $main_width + $side_width + $ct_margin;
 
-// Assign prefix
-$set_prefix: ("-webkit-", "-moz-", "-ms-", null);
-
 // Use utility css
 $use_css_utility: true;
-	// Use spacing classes
-	$use_space_class: true;
-	// Use text-style classes
-	$use_text_class: true;
-	// Use layout-style classes
-	$use_layout_class: true;
+  // Use spacing classes
+  $use_space_class: true;
+  // Use text-style classes
+  $use_text_class: true;
+  // Use layout-style classes
+  $use_layout_class: true;
 
 
 // Font
