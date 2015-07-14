@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var compass = require('gulp-compass');
+var cssmin = require('gulp-cssmin');
 var plumber = require('gulp-plumber');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -13,6 +14,7 @@ gulp.task('default', ['browser-sync', 'watch']);
 gulp.task('watch', function() {
   //gulp.watch('./_sass/**/*.scss', ['compass']);
   gulp.watch('./_sass/**/*.scss', function(event) { gulp.run('compass'); });
+  gulp.watch(public + '/assets/stylesheets/*.css', function(event) { gulp.run('cssmin'); });
   gulp.watch(public + '/assets/javascripts/*.js', ['scripts']);
   gulp.watch(public + '/**/*.php', ['html']);
 });
@@ -23,13 +25,10 @@ gulp.task('scripts', function() {
   //gulp.src(public + '/assets/javascripts/**/*.js')
     //.pipe(concat('application.js'))
     .pipe(uglify())
-    .pipe(rename({
-        suffix: '.min'
-    }))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(public + '/assets/javascripts'))
     .pipe(browserSync.reload({stream: true}));
 });
-
 
 // compass
 gulp.task('compass', function(){
@@ -47,6 +46,14 @@ gulp.task('compass', function(){
     })
     .pipe(gulp.dest(public + '/assets/stylesheets'))
     .pipe(browserSync.reload({stream: true}));
+});
+
+// css-min
+gulp.task('cssmin', function () {
+  gulp.src(public + '/assets/stylesheets/*.css')
+  .pipe(cssmin())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(gulp.dest(public + '/assets/stylesheets'));
 });
 
 // HTML
