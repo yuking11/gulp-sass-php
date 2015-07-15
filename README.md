@@ -10,7 +10,7 @@
  - [制作環境](#production)
  - [ディレクトリ構造](#directory)
  - [Sassファイル設計](#sass)
- - [コード](#code)
+ - [更新履歴](#history)
 
 
 <span id="domain"></span>
@@ -52,6 +52,7 @@
 ### 言語
 
 - php
+- haml
 - html5
 - css3
 - javascript
@@ -72,6 +73,7 @@
 
 ### ツール
 
+- [gulp](http://gulpjs.com) （platform）
 - [Koala](http://koala-app.com/) （windows）
 - [Codekit](https://incident57.com/codekit/) （Mac）
 
@@ -99,7 +101,8 @@
 	- ■ public_html // 公開ディレクトリ
 		- ■ assets
 			- ■ stylesheets
-				- application.css // コンパイルファイル
+        - application.css // コンパイルファイル
+				- application.min.css // application.css Minify
 			- ■ images
 				- ■ spr // 各スプライト用画像を格納
 				- ■ and more ...
@@ -125,8 +128,12 @@
 		- .htaccess
 		- index.php
 		- and more ...
-	- .editorconfig // エディター設定ファイル
-	- config.rb // Compass設定ファイル
+  - .editorconfig // エディター設定ファイル
+	- .gitignore // git監視外設定ファイル
+  - config.rb // Compass設定ファイル
+  - gulpfile.js // gulp設定ファイル
+  - package.json // npm
+	- README.md // 本ファイル
 
 
 <span id="sass"></span>
@@ -138,7 +145,7 @@
 	- ■ base // 共通スタイル
 		- _default.scss
 		- _layout.scss
-		- _normalize.scss
+		- _normalize.scss // compass reset 使用のため未使用
 	- ■ block // 各ブロック
 		- _footer.scss
 		- _header.scss
@@ -161,8 +168,8 @@
 		- _mixin_font.scss
 		- _mixin_gradient.scss
 		- _mixin_icon.scss
-		- _mixin_list.scss
-		- _mixin_position.scss
+    - _mixin_position.scss
+		- _mixin_text.scss
 	- ■ parts // 共通パーツ
 		- _button.scss // ボタン
 		- _form.scss // フォーム
@@ -184,113 +191,10 @@
 	- application.scss // 本体
 
 
-<span id="code"></span>
-## コード
+<span id="history"></span>
+## 更新履歴
 
-- /public/assets/include/site_config.php
-
-``` php
-<?php
-
-	define("DOMAIN", $_SERVER["SERVER_NAME"]);
-	define("PRODUCTON", 'www.example.com');
-	define("DEVELOP", 'example-test.com');
-
-	if(DOMAIN === PRODUCTON){
-		define("HTTPPATH", "http://www.example.com");
-	} else if(DOMAIN === DEVELOP){
-		define("HTTPPATH", "http://example-test.com");
-	}
-
-	define("HTTP", htmlspecialchars(HTTPPATH, ENT_QUOTES));
-
-?>
-```
-
-- /public_html/index.php
-
-``` php
-<?php
-	$slug = 'slug';// includeなどの条件分岐用
-	$title = 'タイトル';
-	$description = 'ディスクリプション';
-	$keywords = 'キーワード1,キーワード2,キーワード3';
-	$image_index = 0;// 0:index 1:noimageindex
-	$search_index = 0;// 0:index 1:noindex,nofolow
-	include_once(dirname(__FILE__) . "/assets/include/site_config.php");
-	include_once(dirname(__FILE__) . "/assets/include/_html_header.php");
-?>
-<body>
-<?php
-	include_once(dirname(__FILE__) . "/assets/include/_start_of_body.php");
-	include_once(dirname(__FILE__) . "/assets/include/_header.php");
-	include_once(dirname(__FILE__) . "/assets/include/_gnav.php");
-?>
-
-
-<div id="ct_wp">
-
-	<div id="main">
-		<main role="main">
-
-			…
-
-		</main>
-	</div><!-- /#main -->
-
-<?php
-	include_once(dirname(__FILE__) . "/assets/include/_side.php");
-?>
-
-</div><!-- /#ct_wp -->
-
-<?php
-	include_once(dirname(__FILE__) . "/assets/include/_footer.php");
-	include_once(dirname(__FILE__) . "/assets/include/_end_of_body.php");
-?>
-</body>
-</html>
-```
-
-- /public/assets/include/_html_header.php
-
-``` html
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="format-detection" content="telephone=no">
-<meta name="viewport" content="width=device-width">
-<?php if ($image_index!==0): ?><meta name="googlebot" content="noimageindex"><?php endif; ?>
-<?php if ($search_index!==0): ?><meta name="robots" content="noindex,nofollow"><?php endif; ?>
-<title><?php echo $title; ?></title>
-<meta name="description" content="<?php echo $description; ?>">
-<meta name="keywords" content="<?php echo $keywords; ?>">
-<link rel="shortcut icon" href="<?php echo HTTP; ?>/assets/images/favicon.ico">
-<link rel="apple-touch-icon" href="<?php echo HTTP; ?>/assets/images/apple-touch-icon.png" type="image/png">
-<link rel="stylesheet" href="<?php echo HTTP; ?>/assets/stylesheets/application.css" media="all">
-<?php if($regacy_IE): ?>
-<!--[if lt IE 9]>
-<script src="<?php echo HTTP; ?>/assets/javascripts/libs/html5shiv.js"></script>
-<script src="<?php echo HTTP; ?>/assets/javascripts/libs/css3-mediaqueries.min.js"></script>
-<![endif]-->
-<?php endif; ?>
-</head>
-```
-
-- /public/assets/include/_end_of_body.php
-
-``` html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="<?php echo HTTP; ?>/assets/javascripts/libs/jquery-1.11.1.min.js"><\/script>')</script>
-<?php if($regacy_IE): ?>
-<!--[if lt IE 9]><script type="text/javascript" src="<?php echo HTTP; ?>/assets/javascripts/libs/selectivizr-min.js"></script><![endif]-->
-<?php endif; ?>
-<script src="<?php echo HTTP; ?>/assets/javascripts/libs/css_browser_selector.min.js"></script>
-<script src="<?php echo HTTP; ?>/assets/javascripts/libs/nivo-lightbox.min.js"></script>
-<script src="<?php echo HTTP; ?>/assets/javascripts/application.min.js"></script>
-```
+15/07/14 - gulpにautoprefixerを追加
 
 
 <p style="margin-top: 3em;text-align: right;"><a href="#">↑ TOPヘ戻る</a></p>
