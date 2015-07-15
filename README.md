@@ -86,54 +86,54 @@
 ■ … ディレクトリ
 
 - ■ example.com
-	- ■ _sass // 各sassファイル格納（Sassファイル設計 参照）
-		- ■ base
-		- ■ block
-		- ■ libs
-		- ■ mixins
-		- ■ parts
-		- ■ pages
-		- ■ settings
-		- ■ system
-		- _init.scss // includeファイル
-		- application.scss // 本体
-	- ■ _sass-cache
-	- ■ public_html // 公開ディレクトリ
-		- ■ assets
-			- ■ stylesheets
+  - ■ _sass // 各sassファイル格納（Sassファイル設計 参照）
+    - ■ base
+    - ■ block
+    - ■ libs
+    - ■ mixins
+    - ■ parts
+    - ■ pages
+    - ■ settings
+    - ■ system
+    - _init.scss // includeファイル
+    - application.scss // 本体
+  - ■ _sass-cache
+  - ■ public_html // 公開ディレクトリ
+    - ■ assets
+      - ■ stylesheets
         - application.css // コンパイルファイル
-				- application.min.css // application.css Minify
-			- ■ images
-				- ■ spr // 各スプライト用画像を格納
-				- ■ and more ...
-				- apple-touch-icon.png
-				- favicon.ico
-				- spr-***.png // Compass生成 Sprite画像
-			- ■ include
-				- _end_of_body.php
-				- _footer.php
-				- _header.php
-				- _html_header.php // <!DOCTYPE html> ~ </head>
-				- _nav.php
-				- _side.php
-				- _start_of_body.php
-				- site_config.php // サイト設定
-			- ■ javascripts
-				- ■ libs // 各種ライブラリ格納
-					- jquery.*.min.js
-					- and more ...
-				- application.js
-				- application.min.js // application.js Minify
-		- ■ hogehoge // 下層ディレクトリ（任意）
-		- .htaccess
-		- index.php
-		- and more ...
+        - application.min.css // application.css Minify
+      - ■ images
+        - ■ spr // 各スプライト用画像を格納
+        - ■ and more ...
+        - apple-touch-icon.png
+        - favicon.ico
+        - spr-***.png // Compass生成 Sprite画像
+      - ■ include
+        - _end_of_body.php
+        - _footer.php
+        - _header.php
+        - _html_header.php // <!DOCTYPE html> ~ </head>
+        - _nav.php
+        - _side.php
+        - _start_of_body.php
+        - site_config.php // サイト設定
+      - ■ javascripts
+        - ■ libs // 各種ライブラリ格納
+          - jquery.*.min.js
+          - and more ...
+        - application.js
+        - application.min.js // application.js Minify
+    - ■ hogehoge // 下層ディレクトリ（任意）
+    - .htaccess
+    - index.php
+    - and more ...
   - .editorconfig // エディター設定ファイル
-	- .gitignore // git監視外設定ファイル
+  - .gitignore // git監視外設定ファイル
   - config.rb // Compass設定ファイル
   - gulpfile.js // gulp設定ファイル
   - package.json // npm
-	- README.md // 本ファイル
+  - README.md // 本ファイル
 
 
 <span id="sass"></span>
@@ -142,53 +142,53 @@
 ■ … ディレクトリ
 
 - ■ _sass // 各sassファイル格納
-	- ■ base // 共通スタイル
-		- _default.scss
-		- _layout.scss
-		- _normalize.scss // compass reset 使用のため未使用
-	- ■ block // 各ブロック
-		- _footer.scss
-		- _header.scss
-		- _main.scss
-		- _nav.scss
-		- _side.scss
-	- ■ libs // ライブラリ
-		- ■ nivo_lightbox
-			- _default.scss
-			- _nivo-lightbox.scss
-		- _libraries.scss // 各ファイルをinclude
-		- _over_write.scss // ライブラリのCSS上書き用
-	- ■ mixins // 各mixinファイル
-		- _mixin.scss // includeファイル
-		- _mixin_animation.scss
-		- _mixin_border.scss
-		- _mixin_box.scss
-		- _mixin_button.scss
-		- _mixin_display.scss
-		- _mixin_font.scss
-		- _mixin_gradient.scss
-		- _mixin_icon.scss
+  - ■ base // 共通スタイル
+    - _default.scss
+    - _layout.scss
+    - _normalize.scss // compass reset 使用のため未使用
+  - ■ block // 各ブロック
+    - _footer.scss
+    - _header.scss
+    - _main.scss
+    - _nav.scss
+    - _side.scss
+  - ■ libs // ライブラリ
+    - ■ nivo_lightbox
+      - _default.scss
+      - _nivo-lightbox.scss
+    - _libraries.scss // 各ファイルをinclude
+    - _over_write.scss // ライブラリのCSS上書き用
+  - ■ mixins // 各mixinファイル
+    - _mixin.scss // includeファイル
+    - _mixin_animation.scss
+    - _mixin_border.scss
+    - _mixin_box.scss
+    - _mixin_button.scss
+    - _mixin_display.scss
+    - _mixin_font.scss
+    - _mixin_gradient.scss
+    - _mixin_icon.scss
     - _mixin_position.scss
-		- _mixin_text.scss
-	- ■ parts // 共通パーツ
-		- _button.scss // ボタン
-		- _form.scss // フォーム
-		- _section.scss // セクション
-		- _table.scss // テーブル
-		- _title.scss // タイトル
-	- ■ pages // 各ページ用
-		- _top.scss
-		- and more ...
-	- ■ settings // サイト制作設定
-		- _colors.scss // サイトカラー設定
-		- _iconfont.scss // アイコンフォント
-		- _sprite.scss // スプライト
-		- _utility.scss // 汎用CSS
-		- _variables.scss // 変数設定
-	- ■ system // System-Unit編集用
-		- system.scss
-	- _init.scss // includeファイル
-	- application.scss // 本体
+    - _mixin_text.scss
+  - ■ parts // 共通パーツ
+    - _button.scss // ボタン
+    - _form.scss // フォーム
+    - _section.scss // セクション
+    - _table.scss // テーブル
+    - _title.scss // タイトル
+  - ■ pages // 各ページ用
+    - _top.scss
+    - and more ...
+  - ■ settings // サイト制作設定
+    - _colors.scss // サイトカラー設定
+    - _iconfont.scss // アイコンフォント
+    - _sprite.scss // スプライト
+    - _utility.scss // 汎用CSS
+    - _variables.scss // 変数設定
+  - ■ system // System-Unit編集用
+    - system.scss
+  - _init.scss // includeファイル
+  - application.scss // 本体
 
 
 <span id="history"></span>
