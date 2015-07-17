@@ -1,38 +1,34 @@
-# html5-PHP Template
+# gulp-compass-php
 ---
 
 ## 目次
 
- - [ドメイン](#domain)
- - [開発サイト](#develop)
- - [基本ガイドライン](#guideline)
- - [ブラウザレギュレーション](#browser)
- - [制作環境](#production)
- - [ディレクトリ構造](#directory)
- - [Sassファイル設計](#sass)
- - [更新履歴](#history)
+ - [ドメイン](#ドメイン)
+ - [開発サイト](#開発サイト)
+ - [基本ガイドライン](#基本ガイドライン)
+ - [ブラウザレギュレーション](#ブラウザレギュレーション)
+ - [制作環境](#制作環境)
+ - [ディレクトリ構造](#ディレクトリ構造)
+ - [Sassファイル設計](#Sassファイル設計)
+ - [更新履歴](#更新履歴)
 
 
-<span id="domain"></span>
 ## ドメイン
 
 [example.com](http://www.example.com/)
 
 
-<span id="develop"></span>
 ## 開発サイト
 
 - 静的：[http://example-test.com/](http://example-test.com/)
 - 動的：[http://example-dev.com/](http://example-dev.com/)
 
 
-<span id="guidline"></span>
 ## 基本ガイドライン
 
 [http://coding-manual.s-rep.net/guideline/](http://coding-manual.s-rep.net/guideline/)
 
 
-<span id="browser"></span>
 ## ブラウザレギュレーション
 
 ### Windows 7+
@@ -46,7 +42,6 @@
 - Safari
 
 
-<span id="production"></span>
 ## 制作環境
 
 ### 言語
@@ -78,7 +73,6 @@
 - [Codekit](https://incident57.com/codekit/) （Mac）
 
 
-<span id="directory"></span>
 ## ディレクトリ構造（静的サイト）
 
 開発・本番環境も基本的には同じだと思います。
@@ -136,7 +130,6 @@
   - README.md // 本ファイル
 
 
-<span id="sass"></span>
 ## Sassファイル設計
 
 ■ … ディレクトリ
@@ -191,9 +184,9 @@
   - application.scss // 本体
 
 
-<span id="history"></span>
 ## 更新履歴
 
+15/07/17 - gulp-compass-phpにリネーム
 15/07/14 - gulpにautoprefixerを追加
 
 
