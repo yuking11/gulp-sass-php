@@ -186,9 +186,8 @@
 
 ## 更新履歴
 
-15/07/17 - gulp-compass-phpにリネーム
-
-15/07/14 - gulpにautoprefixerを追加
+- 15/07/17 - gulp-compass-phpにリネーム
+- 15/07/14 - gulpにautoprefixerを追加
 
 
 <p style="margin-top: 3em;text-align: right;"><a href="#">↑ TOPヘ戻る</a></p>
