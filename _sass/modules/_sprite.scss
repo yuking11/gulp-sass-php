@@ -1,0 +1,62 @@
+/* ===========================================
+ Sprite
+=========================================== */
+
+// .spr {
+//   @if $type == all {// set All Devices and SmartPhone
+//     display: block;
+//     overflow: hidden;
+//     text-indent: 100%;
+//     white-space: nowrap;
+//   }// @if
+// }// .spr
+//
+// @if $type == all {// set All Devices and SmartPhone
+//   $spr-sprite-dimensions: true;
+//   $spr-spacing: 15px;
+//   @import "spr/*.png";
+//   @include all-spr-sprites;
+// }// @if
+
+$sprites: sprite-map('sprites/*.png', $spacing:30px);
+$sprites-img: sprite-url($sprites);
+$sprites2x: sprite-map('sprites2x/*.png', $spacing:60px);
+$sprites2x-img: sprite-url($sprites2x);
+@mixin sprite-background($name) {
+  background-position: sprite-position($sprites, $name);
+  height: image-height(sprite-file($sprites, $name));
+  width: image-width(sprite-file($sprites, $name));
+}
+@mixin sprite-background_2x($name) {
+  width: image-width(sprite-file($sprites2x, $name)) / 2;
+  height: image-height(sprite-file($sprites2x, $name)) / 2;
+  $ypos: round(nth(sprite-position($sprites2x, $name), 2) / 2);
+  background-position: 0 $ypos;
+  $wbgz: image-width(sprite-path($sprites2x)) / 2;
+  background-size: $wbgz auto;
+}
+
+.spr {
+  background-image: $sprites-img;
+  background-repeat: no-repeat;
+  @include ib;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}// .spr
+@each $sprite-name in sprite-names($sprites) {
+  .#{$sprite-name} {
+    @include sprite-background($sprite-name);
+  }// .#{$sprite-name}
+}// @each
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .spr {
+    background-image: $sprites2x-img;
+  }
+  @each $sprite-name in sprite-names($sprites2x) {
+    .#{$sprite-name} {
+      @include sprite-background_2x($sprite-name);
+    }// .#{$sprite-name} {
+  }// @each
+}// @media
