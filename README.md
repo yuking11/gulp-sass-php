@@ -67,17 +67,17 @@ gulpを利用したhtml5（php）テンプレート。
 - [jQuery](http://jquery.com/)
 - [node](https://nodejs.org)
 
-### Plug-in
+### ビルドツール
+
+- [gulp](http://gulpjs.com) （platform）
+
+### プラグイン
 
 - [Nivo Lightbox (jQuery)](https://github.com/gilbitron/Nivo-Lightbox)
 
 ### エディタ
 
 - [Sublime text 3](http://www.sublimetext.com/3)
-
-### ビルドツール
-
-- [gulp](http://gulpjs.com) （platform）
 
 #### package.json
 
@@ -96,7 +96,7 @@ gulpを利用したhtml5（php）テンプレート。
 - "gulp.spritesmith": "^4.0.0",
 - "lodash": "^2.4.1"
 
-## ディレクトリ構造（静的サイト）
+## ディレクトリ構造
 
 開発・本番環境も基本的には同じだと思います。
 
@@ -104,9 +104,11 @@ gulpを利用したhtml5（php）テンプレート。
 example.com/
 |— public_html/  // 公開ディレクトリ
 |     |— assets/
-|     |     |— stylesheets/
-|     |     |     |— application.css     // コンパイルファイル
-|     |     |     `— application.min.css // application.css Minify
+|     |     |— fonts/  // gulp font で生成 iconfontファイル
+|     |     |     |— icon.eot
+|     |     |     |— icon.svg
+|     |     |     |— icon.ttf
+|     |     |     `— icon.woff
 |     |     |
 |     |     |— images/
 |     |     |     |— nivo_lightbox/
@@ -115,8 +117,8 @@ example.com/
 |     |     |     |
 |     |     |     |— apple-touch-icon.png
 |     |     |     |— favicon.ico
-|     |     |     |— sprite.png    // Compass生成 Sprite画像
-|     |     |     `— sprite2x.png  // Compass生成 Sprite-Retina画像
+|     |     |     |— sprite.png    // gulp sprite で生成 Sprite画像
+|     |     |     `— sprite2x.png  // gulp sprite で生成 Sprite-Retina画像
 |     |     |
 |     |     |— include/
 |     |     |     |— _end_of_body.php
@@ -128,19 +130,24 @@ example.com/
 |     |     |     |— _start_of_body.php
 |     |     |     `— site_config.php
 |     |     |
-|     |     `— javascripts/
-|     |           |— libs/
-|     |           |     |- jquery.*.min.js
-|     |           |     ...
-|     |           |
-|     |           |— application.js
-|     |           `— application.min.js  // application.js Minify
+|     |     |— javascripts/
+|     |     |     |— libs/
+|     |     |     |     |- jquery.*.min.js
+|     |     |     |     ...
+|     |     |     |
+|     |     |     |— application.js
+|     |     |     `— application.min.js  // application.js Minify
+|     |     |
+|     |     `— stylesheets/
+|     |           |— application.css     // コンパイルファイル
+|     |           `— application.min.css // application.css Minify
 |     |
 |     |— hogehoge/
 |     |     |— index.php
 |     |     ...
 |     |
 |     |— .htaccess
+|     |— icon-sample.php  // src/_icons/template.htmlのコンパイルファイル
 |     `— index.php
 |
 |— src/  // 各srcファイル格納
