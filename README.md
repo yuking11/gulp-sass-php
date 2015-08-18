@@ -1,4 +1,4 @@
-# gulp-compass-php
+# gulp-sass-php
 ---
 
 ## 目次
@@ -230,6 +230,7 @@ _sass/
 
 ## 更新履歴
 
+- 15/08/18 - gulp-sass-phpにリネーム
 - 15/08/18 - compassを削除、spriteとiconfontのgulp.taskを追加
 - 15/08/07 - ディレクトリ構造、Sassファイル設計を修正
 - 15/07/17 - gulp-compass-phpにリネーム
