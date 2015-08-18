@@ -23,7 +23,7 @@
 	<div id="main">
 		<main role="main">
 
-			<div class="test">test</div>
+			<div class="test">test2</div>
 
 		</main>
 	</div><!-- /#main -->

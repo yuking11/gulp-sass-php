@@ -17,7 +17,7 @@
 
 ## 概要
 
-gulp、compass（spriteのみ）を利用したhtml5（php）テンプレート。
+gulpを利用したhtml5（php）テンプレート。
 
 ブラウザレギュレーション、制作情報はプロジェクト毎に修正してください。
 
@@ -63,7 +63,6 @@ gulp、compass（spriteのみ）を利用したhtml5（php）テンプレート�
 
 ### フレームワーク
 
-- [Compass](http://compass-style.org/)
 - [Sass](http://sass-lang.com/)
 - [jQuery](http://jquery.com/)
 - [node](https://nodejs.org)
@@ -82,15 +81,20 @@ gulp、compass（spriteのみ）を利用したhtml5（php）テンプレート�
 
 #### package.json
 
-- browser-sync
-- gulp
-- gulp-autoprefixer
-- gulp-compass
-- gulp-concat
-- gulp-cssmin
-- gulp-plumber
-- gulp-rename
-- gulp-uglify
+- "browser-sync": "^2.7.7",
+- "gulp": "^3.9.0",
+- "gulp-autoprefixer": "^2.3.1",
+- "gulp-concat": "^2.5.2",
+- "gulp-consolidate": "^0.1.2",
+- "gulp-cssmin": "^0.1.7",
+- "gulp-iconfont": "^1.0.0",
+- "gulp-load-plugins": "^1.0.0-rc.1",
+- "gulp-plumber": "^1.0.1",
+- "gulp-rename": "^1.2.2",
+- "gulp-sass": "^2.0.4",
+- "gulp-uglify": "^1.2.0",
+- "gulp.spritesmith": "^4.0.0",
+- "lodash": "^2.4.1"
 
 ## ディレクトリ構造（静的サイト）
 
@@ -98,8 +102,6 @@ gulp、compass（spriteのみ）を利用したhtml5（php）テンプレート�
 
 ```
 example.com/
-|— _sass/  // 各sassファイル格納（Sassファイル設計 参照）
-|
 |— public_html/  // 公開ディレクトリ
 |     |— assets/
 |     |     |— stylesheets/
@@ -141,6 +143,14 @@ example.com/
 |     |— .htaccess
 |     `— index.php
 |
+|— src/  // 各srcファイル格納
+|     |— _icons/  // IconFont格納
+|     |     |— *.svg           // svgファイル
+|     |     |— template.html   // iconfont一覧用の元html
+|     |     `— template.css    // _iconfont.scssの元css
+|     |
+|     `— _sass/   // 各sassファイル格納（Sassファイル設計 参照）
+|
 |— .editorconfig  // エディター設定ファイル
 |— .gitignore     // git監視外設定ファイル
 |— config.rb      // Compass設定ファイル
@@ -174,7 +184,7 @@ _sass/
 |     `— _mixins.scss        // importファイル
 |
 |— modules/
-|     |— _iconfont.scss // アイコンフォント
+|     |— _iconfont.scss // アイコンフォント（src/_icons/template.cssから生成されるファイル）
 |     |— _sprite.scss   // css sprite
 |     `— _utility.scss  // 汎用クラス
 |
@@ -220,6 +230,7 @@ _sass/
 
 ## 更新履歴
 
+- 15/08/18 - compassを削除、spriteとiconfontのgulp.taskを追加
 - 15/08/07 - ディレクトリ構造、Sassファイル設計を修正
 - 15/07/17 - gulp-compass-phpにリネーム
 - 15/07/14 - gulpにautoprefixerを追加

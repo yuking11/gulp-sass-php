@@ -1,77 +1,124 @@
-var gulp = require('gulp');
-var compass = require('gulp-compass');
-var autoprefixer = require("gulp-autoprefixer");
-var cssmin = require('gulp-cssmin');
-var plumber = require('gulp-plumber');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var concat = require('gulp-concat');
+var gulp        = require('gulp');
+var $           = require("gulp-load-plugins")();
 var browserSync = require('browser-sync').create();
-var public = './public_html';
+var paths = {
+  dest     : './public_html',
+  sass     : './src/_sass',
+  srcFonts : './src/_icons',
+  dstFonts : './public_html/assets/fonts',
+  images   : './public_html/assets/images',
+  scripts  : './public_html/assets/javascripts',
+  styles   : './public_html/assets/stylesheets'
+}
 
 gulp.task('default', ['browser-sync', 'watch']);
 
 // Watch
 gulp.task('watch', function() {
-  //gulp.watch('./_sass/**/*.scss', ['compass']);
-  gulp.watch('./_sass/**/*.scss', function(event) { gulp.run('compass'); });
-  gulp.watch(public + '/assets/javascripts/*.js', ['scripts']);
-  gulp.watch(public + '/**/*.php', ['html']);
+  //gulp.watch(paths.sass + '/**/*.scss', ['sass']);
+  gulp.watch( paths.sass + '/**/*.scss', function(event) { gulp.run('sass'); } );
+  gulp.watch( paths.scripts + '/*.js', ['scripts'] );
+  gulp.watch( paths.dest + '/**/*.php', ['html'] );
 });
 
 // Script
 gulp.task('scripts', function() {
-  gulp.src(public + '/assets/javascripts/application.js')
-  //gulp.src(public + '/assets/javascripts/**/*.js')
+  gulp.src( paths.scripts + '/application.js' )
+  //gulp.src(paths.scripts + '/**/*.js')
     //.pipe(concat('application.js'))
-    .pipe(plumber())
-    .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(public + '/assets/javascripts'))
+    .pipe($.plumber())
+    .pipe($.uglify())
+    .pipe($.rename({ suffix: '.min' }))
+    .pipe(gulp.dest( paths.scripts ))
+    .pipe(browserSync.reload({ stream: true }));
+});
+
+// sass
+gulp.task('sass', function () {
+  gulp.src( paths.sass + '/**/*.scss' )
+    .pipe($.plumber())
+    .pipe($.sass({
+      //outputStyle: 'compressed'
+    })
+    .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: ['last 3 versions', 'android >= 2.1']
+    }))
+    .pipe(gulp.dest( paths.styles ))
     .pipe(browserSync.reload({stream: true}));
 });
 
-// compass
-gulp.task('compass', function(){
-  gulp.src('_sass/**/*.scss')
-    .pipe(plumber())
-    .pipe(compass({
-      config_file: 'config.rb',
-      comments: false,
-      css: public + '/assets/stylesheets/',
-      sass: '_sass/'
-    }))
-    .on('error', function(error) {
-      // Would like to catch the error here
-      console.log(error);
-      this.emit('end');
-    })
-    //.pipe(filter('**/*.css'))// cssのみを取り出す
-    .pipe(autoprefixer({
-      browsers: ['last 3 versions', 'android >= 2.1']
-    }))
-    .pipe(gulp.dest(public + '/assets/stylesheets'))
-    .pipe(browserSync.reload({stream: true}));
+// sprite
+gulp.task('sprite', function(){
+  var spriteData;
+  spriteData = gulp.src( paths.images + '/sprites/*.png' )
+  .pipe($.spritesmith({
+    retinaSrcFilter: paths.images + '/sprites/*-2x.png',
+    imgName: 'sprite.png',
+    retinaImgName: 'sprite-2x.png',
+    imgPath: 'images/sprite.png',
+    retinaImgPath: paths.images + '/sprite-2x.png',
+    cssName: '_sprites.scss',
+    padding: 40
+  }));
+  spriteData.img.pipe(gulp.dest( paths.images ));
+  return spriteData.css.pipe(gulp.dest( paths.sass + '/modules' ));
 });
+
+// iconfont
+gulp.task( 'font', function() {
+  var fontName = 'icon';
+  return gulp.src( paths.srcFonts + '/*.svg' )
+    .pipe( $.iconfont( {
+      fontName: fontName,
+      startCodepoint: 0xF001
+    } ) )
+    .on( 'codepoints', function( codepoints ) {
+      var options = {
+        className : fontName,
+        fontName  :  fontName,
+        fontPath  :  '../fonts/',
+        timeStamp : Date.now(),
+        glyphs    : codepoints
+      };
+      // CSS
+      gulp.src( 'src/_icons/template.css' )
+      .pipe( $.consolidate( 'lodash', options ) )
+      .pipe( $.rename( {
+        basename: '_iconfont',
+        extname: '.scss'
+      } ) )
+      .pipe( gulp.dest( paths.sass + '/modules' ) );
+      // フォント一覧 HTML
+      gulp.src( 'src/_icons/template.html' )
+      .pipe( $.consolidate( 'lodash', options ) )
+      .pipe( $.rename( {
+        basename: 'icon-sample',
+        extname: '.php'
+      }))
+      .pipe( gulp.dest( paths.dest ) );
+    } )
+  .pipe( gulp.dest( paths.dstFonts ) );
+} );
 
 // css-min
 gulp.task('cssmin', function () {
-  gulp.src(public + '/assets/stylesheets/application.css')
-  .pipe(cssmin())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest(public + '/assets/stylesheets'));
+  gulp.src( paths.styles + '/application.css' )
+  .pipe($.cssmin())
+  .pipe($.rename({ suffix: '.min' }))
+  .pipe(gulp.dest( paths.styles ));
 });
 
 // HTML
 gulp.task('html', function() {
-  gulp.src(public + '/**/*.php')
-    .pipe(plumber())
+  gulp.src(paths.dest + '/**/*.php')
+    .pipe($.plumber())
     .pipe(browserSync.reload({stream: true}));
 });
 
 // BrowserSync
 gulp.task('browser-sync', function() {
   browserSync.init({
-    proxy: 'localhost:80'// 環境にあわせて変更
+    proxy: 'localhost:8080'// 環境にあわせて変更
   });
 });

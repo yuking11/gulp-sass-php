@@ -8,11 +8,6 @@
 */
 
 // ===========================================
-// Import Compass-Sprites
-// ===========================================
-@import "compass/utilities/sprites";
-
-// ===========================================
 // サイト設定 変数一覧
 // ===========================================
 @import "settings/variables";
@@ -41,9 +36,10 @@
 // ===========================================
 // Modules
 // ===========================================
-@import "modules/utility";// Utilities
-@import "modules/sprite";// Sprite
 @import "modules/iconfont";// iconfont
+@import "modules/sprites";// Sprite
+//@include retina-sprites($retina-groups);
+@import "modules/utility";// Utilities
 
 // Site Styles
 //---------------------------------------------
