@@ -24,3 +24,11 @@
   } @else if $type == pc {// set PC
   }// @if
 }// #top_page
+
+.test {
+  @if $type == all {// set All Devices and SmartPhone
+    margin: 10px;
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
+}
