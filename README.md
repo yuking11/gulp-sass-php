@@ -115,7 +115,7 @@ example.com/
 |     |     |     |— sprites/
 |     |     |     |     |— hogehoge.png     // 通常用
 |     |     |     |     |— hogehoge-2x.png  // Retina用
-|     |     |     |     ・・・
+|     |     |     |     ...
 |     |     |     |
 |     |     |     |— apple-touch-icon.png
 |     |     |     |— favicon.ico
