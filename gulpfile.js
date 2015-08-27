@@ -64,6 +64,22 @@ gulp.task('sprite', function(){
   spriteData.img.pipe(gulp.dest( paths.images ));
   return spriteData.css.pipe(gulp.dest( paths.sass + '/modules' ));
 });
+// sprite ( retina )
+gulp.task('spriter', function(){
+  var spriteData;
+  spriteData = gulp.src( paths.images + '/sprites/*.png' )
+  .pipe($.spritesmith({
+    retinaSrcFilter: paths.images + '/sprites/*-2x.png',
+    imgName: 'sprite.png',
+    retinaImgName: 'sprite-2x.png',
+    imgPath: 'images/sprite.png',
+    retinaImgPath: paths.images + '/sprite-2x.png',
+    cssName: '_sprites.scss',
+    padding: 40
+  }));
+  spriteData.img.pipe(gulp.dest( paths.images ));
+  return spriteData.css.pipe(gulp.dest( paths.sass + '/modules' ));
+});
 
 // iconfont
 gulp.task( 'font', function() {
