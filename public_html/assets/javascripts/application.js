@@ -34,11 +34,10 @@ jQuery(document).ready(function ($) {
   $(function(){
     $('[data-anchor]').on('click', function() {
       var $self        = $(this),
-          $menuHeight  = $('#c_nav').outerHeight(),
           $target      = $self.attr('data-anchor'),
           targetOffset = 0;
       if( $target[0] && $target !== 'page_top') {
-        targetOffset = $('[data-anchor-target="'+ $target +'"]').offset().top - $menuHeight;
+        targetOffset = $('#'+ $target).offset().top;
       }
       $('html,body').animate({scrollTop: targetOffset}, 500);
       $self.blur();
