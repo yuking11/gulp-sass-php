@@ -38,7 +38,11 @@
 // ===========================================
 @import "modules/iconfont";// iconfont
 @import "modules/sprites";// Sprite
-//@include retina-sprites($retina-groups);
+@if $use_sprite {
+  @include sprites($spritesheet-sprites);
+} @elseif $use_sprite_retina {
+  @include retina-sprites($retina-groups);
+}
 @import "modules/utility";// Utilities
 
 // Site Styles

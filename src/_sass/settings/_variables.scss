@@ -25,6 +25,10 @@ $main_width: 760px;
 $side_width: 200px;
 $base_width: $main_width + $side_width + $ct_margin;
 
+// Use sprite
+$use_sprite: false;
+$use_sprite_retina: false;
+
 // Use utility css
 $use_css_utility: true;
   // Use spacing classes
