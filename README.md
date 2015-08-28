@@ -162,10 +162,9 @@ example.com/
 |
 |— .editorconfig  // エディター設定ファイル
 |— .gitignore     // git監視外設定ファイル
-|— config.rb      // Compass設定ファイル
 |— gulpfile.js    // gulp設定ファイル
 |— package.json   // npm
-`— README.md      // 本ファイル
+`— README.md
 ```
 
 
@@ -190,15 +189,19 @@ _sass/
 |     |— _mixin_icon.scss
 |     |— _mixin_position.scss
 |     |— _mixin_text.scss
-|     `— _mixins.scss        // importファイル
+|     `— _mixins.scss     // importファイル
 |
 |— modules/
 |     |— _iconfont.scss // アイコンフォント（src/_icons/template.cssから生成されるファイル）
-|     |— _sprite.scss   // css sprite
+|     |— _sprite.scss   // css sprite（gulp sprite で自動生成）
 |     `— _utility.scss  // 汎用クラス
 |
 |— partials/
-|     |— index/
+|     |— category/  // 下層ページ用scss
+|     |     |— _base.scss
+|     |     ...
+|     |
+|     |— index/     // トップページ用scss
 |     |     |— _base.scss
 |     |     ...
 |     |
