@@ -32,14 +32,13 @@ jQuery(document).ready(function ($) {
 	// スムーズスクロール
 	/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   $(function(){
-    $('[data-anchor]').on('click', function() {
-      var $self        = $(this),
-          $target      = $self.attr('data-anchor'),
-          targetOffset = 0;
-      if( $target[0] && $target !== 'page_top') {
-        targetOffset = $('#'+ $target).offset().top;
-      }
-      $('html,body').animate({scrollTop: targetOffset}, 500);
+    $('a[href^=#]:not([data-toggle])').on('click', function() {
+      var speed   = 500,
+          $self   = $(this),
+          $href   = $self.attr('href'),
+          $target = $($href);
+      var pos = ( $target[0] && $target !== '#page_top' ) ? $target.offset().top : 0;
+      $('html,body').animate({scrollTop: pos}, speed, 'swing');
       $self.blur();
       return false;
     });// end function.onClick
