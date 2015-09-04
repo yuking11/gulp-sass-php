@@ -132,6 +132,7 @@ gulp.task('html', function() {
 // BrowserSync
 gulp.task('browser-sync', function() {
   browserSync.init({
-    proxy: 'localhost:8080'// 環境にあわせて変更
+    proxy: 'localhost:8080',// 環境にあわせて変更
+    open; 'external'// URLをUPで開く
   });
 });
