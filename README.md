@@ -242,6 +242,7 @@ _sass/
 
 ## 更新履歴
 
+- 15/09/17 - タブ切り替えjs追加
 - 15/09/01 - スムーズスクロールのjsを修正
 - 15/08/18 - gulp-sass-phpにリネーム
 - 15/08/18 - compassを削除、spriteとiconfontのgulp.taskを追加
