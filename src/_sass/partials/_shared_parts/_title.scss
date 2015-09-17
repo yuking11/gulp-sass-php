@@ -4,32 +4,32 @@
 //
 // =====================================================
 
-/* main
+/* Primary
 --------------------------------------------- */
-.ttl_main {
+.title--primary {
   @if $type == all {// set All Devices and SmartPhone
     width: 100%;
   } @else if $type == tab {// set Tablet
   } @else if $type == pc {// set PC
   }// @if
-}// .ttl_main
+}// .title--primary
 
-/* sub
+/* Secondary
 --------------------------------------------- */
-.ttl_sub {
+.title--secondary {
   @if $type == all {// set All Devices and SmartPhone
     width: 100%;
   } @else if $type == tab {// set Tablet
   } @else if $type == pc {// set PC
   }// @if
-}// .ttl_sub
+}// .title--secondary
 
-/* detail
+/* tertiary
 --------------------------------------------- */
-.ttl_detail {
+.title--tertiary {
   @if $type == all {// set All Devices and SmartPhone
     width: 100%;
   } @else if $type == tab {// set Tablet
   } @else if $type == pc {// set PC
   }// @if
-}// .ttl_detail
+}// .title--tertiary

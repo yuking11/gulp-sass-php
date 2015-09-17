@@ -15,9 +15,9 @@
     &:last-child {
       margin-bottom: 0;
     }// &:last-child
-    .section--child + .section--child {
+    .section__child + .section__child {
       margin-top: $base_mg;
-    }// .section--child + .section--child
+    }// .section__child + .section__child
   } @else if $type == tab {// set Tablet
   } @else if $type == pc {// set PC
   }// @if
@@ -32,9 +32,9 @@
     &:last-child {
       margin-bottom: 0;
     }// &:last-child
-    .section--child + .section--child {
+    .section__child + .section__child {
       margin-top: $base_mg * .5;
-    }// .section--child + .section--child
+    }// .section__child + .section__child
   } @else if $type == tab {// set Tablet
   } @else if $type == pc {// set PC
   }// @if

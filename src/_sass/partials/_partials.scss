@@ -2,18 +2,18 @@
 // Site Styles
 // ===========================================
 // ブロック
-@import "shared_block/layout";// レイアウト
-@import "shared_block/header";// ヘッダー
-@import "shared_block/nav";// ナビゲーション
-@import "shared_block/main";// メインカラム
-@import "shared_block/side";// サイドカラム
-@import "shared_block/footer";// フッター
+@import "_shared_block/layout";// レイアウト
+@import "_shared_block/header";// ヘッダー
+@import "_shared_block/nav";// ナビゲーション
+@import "_shared_block/main";// メインカラム
+@import "_shared_block/side";// サイドカラム
+@import "_shared_block/footer";// フッター
 // パーウ
-@import "shared_parts/section";// セクション
-@import "shared_parts/title";// 見出し
-@import "shared_parts/button";// ボタン
-@import "shared_parts/form";// フォーム
-@import "shared_parts/table";// テーブル
+@import "_shared_parts/section";// セクション
+@import "_shared_parts/title";// 見出し
+@import "_shared_parts/button";// ボタン
+@import "_shared_parts/form";// フォーム
+@import "_shared_parts/table";// テーブル
 // ページ毎の固有Styke
 @import "index/base";// トップページ
 //@import "category_name/base";// 各カテゴリ

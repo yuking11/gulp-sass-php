@@ -12,16 +12,11 @@
 }
 
 @mixin keyframes($name){
-  @-webkit-keyframes $name {
-    @content;
-  }
-  @-moz-keyframes $name {
-    @content;
-  }
   @keyframes $name {
     @content;
   }
 }
-@mixin animation($name, $duration, $timing, $delay, $count, $direction: null) {
-  #{animation}: $name $duration $timing $delay $count $direction;
+
+@mixin animation($name, $duration: .5, $timing: null, $delay: null, $count: null, $direction: null) {
+  #{animation}: $name ($duration + s) $timing $delay $count $direction;
 }
