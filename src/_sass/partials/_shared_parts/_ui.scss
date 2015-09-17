@@ -1,0 +1,80 @@
+//=====================================================
+//
+// UI Style
+//
+// =====================================================
+
+/* タブ切り替え
+--------------------------------------------- */
+@if $type == all {// set All Devices and SmartPhone
+  @include keyframes(tab_show) {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}// @if
+$tab_length: 3;
+.ui__tab {
+  @if $type == all {// set All Devices and SmartPhone
+    .tab__ctrl {
+      display: none;
+    }// .tab__ctrl
+    .tab__label {
+      display: inline-block;
+      cursor: pointer;
+      @include trs( $time: .5 );
+    }// .tab__label
+    .tab__content {
+      display: none;
+      box-sizing: border-box;
+    }// .tab__content
+    %visible {
+      display: block;
+      @include animation( $name: tab_show );
+    }
+    @for $i from 1 through $tab_length {
+      #tab__ctrl--#{$i}:checked ~ #tab__content--#{$i} {
+        @extend %visible;
+      }// #tab__ctrl--#{$i}:checked ~ #tab__content--#{$i}
+    }// @for
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
+}// .ui__tab
+
+
+/* アコーディオン
+--------------------------------------------- */
+$acc_length: 2;
+.ui__acc {
+  @if $type == all {// set All Devices and SmartPhone
+    .acc__label {
+      display: block;
+      cursor: pointer;
+    }// .acc__label
+    .acc__ctrl {
+      display: none;
+    }// .acc__ctrl
+    .acc__content {
+      @include trs( $time: .25 );
+    }// .acc__content
+    .acc__ctrl + .acc__content {
+      height: 0;
+      overflow: hidden;
+    }// .acc__ctrl + .acc__content
+    %visible {
+      height: auto;
+      //@include animation( $name: acc_show );
+    }
+    @for $i from 1 through $acc_length {
+      #acc__ctrl--#{$i}:checked + .acc__content {
+        @extend %visible;
+      }// #acc__ctrl--#{$i}:checked + .acc__content
+    }// @for
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
+}// .ui__acc
