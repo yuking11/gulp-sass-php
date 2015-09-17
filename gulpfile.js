@@ -106,7 +106,7 @@ gulp.task( 'font', function() {
       gulp.src( 'src/_icons/template.html' )
       .pipe( $.consolidate( 'lodash', options ) )
       .pipe( $.rename( {
-        basename: 'icon-sample',
+        basename: '_icon-sample',
         extname: '.php'
       }))
       .pipe( gulp.dest( paths.dest ) );

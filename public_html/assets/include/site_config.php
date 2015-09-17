@@ -19,7 +19,7 @@
   } else if($host === $host_local){
     //define("HTTP", 'http://local.example.com');
   }
-  define("HTTP", $base_url);
+  define("HTTP", htmlspecialchars($base_url, ENT_QUOTES));
 
   $current_url = $base_url . $_SERVER['REQUEST_URI'];
   define("CURRENT_URL", htmlspecialchars($current_url, ENT_QUOTES));
