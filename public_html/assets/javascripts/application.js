@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
       var speed   = 500,
           $self   = $(this),
           $href   = $self.attr('href'),
-          $margin = parseInt($self.attr('data-scroll')),
+          $margin = $self.attr('data-scroll') ? parseInt($self.attr('data-scroll')) : 0,
           $target = $($href);
       var pos = ( $target[0] && $target !== '#page_top' ) ? $target.offset().top - $margin : 0;
       $('html,body').animate({scrollTop: pos}, speed, 'swing');
