@@ -61,6 +61,9 @@ jQuery(document).ready(function ($) {
       $wrap.find('[data-tab-content="true"]').show();
       // タブクリックの処理
       $label.on('click', function(){
+        function fin(){
+          is_moving = false;
+        }// end function
         var $self    = $(this),
             $parent  = $self.closest('[data-tab]'),
             $matches = $self.attr('data-tab-label'),
@@ -100,9 +103,6 @@ jQuery(document).ready(function ($) {
             }// end if
           }// end if
           return false;
-          function fin(){
-            is_moving = false;
-          }// end function
         } else {
           return false;
         }// end if
