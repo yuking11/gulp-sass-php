@@ -27,6 +27,17 @@
   /*
    * 関数
   */
+  function is_local() {
+    $domain      = 'example.com';
+    $host        = $_SERVER["HTTP_HOST"];
+    $host_local  = 'localhost'.strstr($host, ':');
+    $host_locals = array(
+                      $host_local,
+                      'coding-team.private.s-rep.net',
+                      'coding-team.'.$domain.'.s-rep.net'
+                    );
+    return in_array($host, $host_locals);
+  }
   function home_url( $atts ) {
     if( !empty($atts) ){
       $url = HTTP . $atts;

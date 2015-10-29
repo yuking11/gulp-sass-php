@@ -12,7 +12,11 @@
 <meta name="keywords" content="<?php echo $keywords; ?>">
 <link rel="shortcut icon" href="<?php echo HTTP; ?>/assets/images/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo HTTP; ?>/assets/images/apple-touch-icon.png" type="image/png">
+<?php if( !is_local() ): ?>
+<link rel="stylesheet" href="<?php echo HTTP; ?>/assets/stylesheets/application.min.css" media="all">
+<?php else: ?>
 <link rel="stylesheet" href="<?php echo HTTP; ?>/assets/stylesheets/application.css" media="all">
+<?php endif; ?>
 <?php if($regacy_IE): ?>
 <!--[if lt IE 9]>
 <script src="<?php echo HTTP; ?>/assets/javascripts/vendor/html5shiv.js"></script>

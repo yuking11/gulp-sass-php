@@ -17,6 +17,7 @@ gulp.task('default', ['browser-sync', 'watch']);
 gulp.task('watch', function() {
   //gulp.watch(paths.sass + '/**/*.scss', ['sass']);
   gulp.watch( paths.sass + '/**/*.scss', function(event) { gulp.run('sass'); } );
+  gulp.watch( paths.styles + '/application.css', ['cssmin'] );
   gulp.watch( paths.scripts + '/*.js', ['scripts'] );
   gulp.watch( paths.dest + '/**/*.php', ['html'] );
 });
