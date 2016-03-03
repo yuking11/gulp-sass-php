@@ -43,7 +43,7 @@ gulp.task('sass', function () {
     })
     .on('error', $.sass.logError))
     .pipe($.autoprefixer({
-      browsers: ['last 3 versions', 'android >= 2.1']
+      browsers: ['last 2 versions', 'ie >= 9', 'android >= 4', 'ios_saf >= 8']
     }))
     .pipe(gulp.dest( paths.styles ))
     .pipe(browserSync.reload({stream: true}));
