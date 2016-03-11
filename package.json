@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/coobal-production/gulp-sass-php.git"
+    "url": "https://github.com/yuking11/gulp-sass-php.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coobal-production/gulp-sass-php/issues"
+    "url": "https://github.com/yuking11/gulp-sass-php/issues"
   },
-  "homepage": "https://github.com/coobal-production/gulp-sass-php",
+  "homepage": "https://github.com/yuking11/gulp-sass-php",
   "devDependencies": {
     "browser-sync": "^2.7.7",
     "gulp": "^3.9.0",
