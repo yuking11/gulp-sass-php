@@ -8,6 +8,16 @@
   }
   font-size: ($size / $base) * 1rem;
 }
+@function get_vw( $size, $viewport: 320 ){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+@mixin fsvw_lh( $font_size: 16, $line_height: 16 ){
+  font-size: $font_size * 1px;
+  font-size: get_vw( $font_size );
+  line-height: $line_height * 1px;
+  line-height: get_vw( $line_height );
+}
 
 // text-shadow
 @mixin ts( $param: 0 1px 0 rgba(#000, .2) ){
