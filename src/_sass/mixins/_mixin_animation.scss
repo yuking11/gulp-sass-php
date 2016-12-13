@@ -12,7 +12,7 @@
 }
 
 @mixin keyframes($name){
-  @keyframes $name {
+  @keyframes #{$name} {
     @content;
   }
 }
