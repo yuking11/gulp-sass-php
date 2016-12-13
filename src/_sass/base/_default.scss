@@ -7,16 +7,19 @@ DEFAULT STYLES
 /* Default Styles
 --------------------------------------------- */
 
-* {
-  @include box;
-}
-
 // html
 html {
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   overflow-y: scroll;
   @include fs($font_size);
+  @include box;
+}
+
+*,
+*:before,
+*:after {
+  @include box(inherit);
 }
 
 // body
