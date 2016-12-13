@@ -10,6 +10,7 @@
 // Browser support
 $support_ie8: false;
 $support_ie9: false;
+$support_regacy_opera: false;
 @if (not $support_ie8) and $support_ie9 {
   $experimental-support-for-svg: true;
 }

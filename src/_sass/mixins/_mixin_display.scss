@@ -15,11 +15,15 @@
     *zoom: 1;
   } @else {
     &:after {
-      content: " ";
+      @if $support_regacy_opera {
+        content: " ";
+      } @else {
+        content: "";
+      }// @iif
       display: block;
       clear: both;
     }
-  }
+  }// @iif
 }
 
 // inline-block
