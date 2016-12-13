@@ -45,6 +45,7 @@ gulp.task('sass', function () {
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9', 'android >= 4', 'ios_saf >= 8']
     }))
+    .pipe($.groupCssMediaQueries())
     .pipe(gulp.dest( paths.styles ))
     .pipe(browserSync.reload({stream: true}));
 });
@@ -133,7 +134,7 @@ gulp.task('html', function() {
 // BrowserSync
 gulp.task('browser-sync', function() {
   browserSync.init({
-    proxy: 'localhost:8080',// 環境にあわせて変更
+    proxy: 'localhost:8090',// 環境にあわせて変更
     open: 'external'// URLをUPで開く
   });
 });
