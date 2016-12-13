@@ -45,7 +45,6 @@ gulp.task('sass', function () {
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9', 'android >= 4', 'ios_saf >= 8']
     }))
-    .pipe($.groupCssMediaQueries())
     .pipe(gulp.dest( paths.styles ))
     .pipe(browserSync.reload({stream: true}));
 });
@@ -119,6 +118,7 @@ gulp.task( 'font', function() {
 // css-min
 gulp.task('cssmin', function () {
   gulp.src( paths.styles + '/application.css' )
+  .pipe($.groupCssMediaQueries())
   .pipe($.cssmin())
   .pipe($.rename({ suffix: '.min' }))
   .pipe(gulp.dest( paths.styles ));
