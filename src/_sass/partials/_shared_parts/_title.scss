@@ -7,29 +7,32 @@
 /* Primary
 --------------------------------------------- */
 .title--primary {
-  @if $type == all {// set All Devices and SmartPhone
-    width: 100%;
-  } @else if $type == tab {// set Tablet
-  } @else if $type == pc {// set PC
-  }// @if
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
 }// .title--primary
 
 /* Secondary
 --------------------------------------------- */
 .title--secondary {
-  @if $type == all {// set All Devices and SmartPhone
-    width: 100%;
-  } @else if $type == tab {// set Tablet
-  } @else if $type == pc {// set PC
-  }// @if
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
 }// .title--secondary
 
 /* tertiary
 --------------------------------------------- */
 .title--tertiary {
-  @if $type == all {// set All Devices and SmartPhone
-    width: 100%;
-  } @else if $type == tab {// set Tablet
-  } @else if $type == pc {// set PC
-  }// @if
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
 }// .title--tertiary

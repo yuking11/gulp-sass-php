@@ -1,59 +1,161 @@
 //=====================================================
 //
-// layout
+// layout - Grid System
 //
 // =====================================================
 
+/**
 /* header
 --------------------------------------------- */
-#header {
-  @if $type == all {// set All Devices and SmartPhone
-    width: 100%;
-  } @else if $type == tab {// set Tablet
-  } @else if $type == pc {// set PC
-  }// @if
-}// #header
+.l-header {
+  width: $site_width;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
+}// .l-header
 
+
+/**
 /* nav
 --------------------------------------------- */
-#nav {
-  @if $type == all {// set All Devices and SmartPhone
-    width: 100%;
-  } @else if $type == tab {// set Tablet
-  } @else if $type == pc {// set PC
-  }// @if
-}// #nav
+.l-nav {
+  width: $site_width;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
+}// .l-nav
 
-/* ct_wp > main & side
+
+/**
+ * Contents Wrapper
 --------------------------------------------- */
-#ct_wp {
-  @if $type == all {// set All Devices and SmartPhone
-    width: 100%;
-  } @else if $type == tab {// set Tablet
-    #main, #side {
-      display: table-cell;
-      vertical-align: top;
-    }// #main, #side
-    #side {
-      width: $side_width;
-      padding-right: $ct_margin;
-    }// #side
-    #main + #side {
-      padding: 0 0 0 $ct_margin;
-    }// #main + #side
-  } @else if $type == pc {// set PC
-    #main {
-      width: $main_width;
-    }// #main
-  }// @if
-}// #ct_wp
+.l-wrap {
+  max-width: $site_width;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
+}
 
+.l-article {
+  @include cf;
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
+
+  .grid-item {
+    @include mq(tab) {
+      float: left;
+      padding-right: $ct_margin;
+      padding-left: $ct_margin;
+    }// @include mq(tab)
+    @include mq(pc) {
+    }// @include mq(pc)
+    @include mq(wide) {
+    }// @include mq(wide)
+  }// .grid-item
+
+  .l-guest {
+    @include mq(tab) {
+      float: left;
+      width: percentage(4/12);
+    }// @include mq(tab)
+    @include mq(pc) {
+    }// @include mq(pc)
+    @include mq(wide) {
+      width: percentage(2/12);
+    }// @include mq(wide)
+  }// .l-guest
+
+  .l-main {
+    margin-top: 20px;
+    @include mq(tab) {
+      float: left;
+      width: percentage(8/12);
+      margin-top: 0;
+    }// @include mq(tab)
+    @include mq(pc) {
+    }// @include mq(pc)
+    @include mq(wide) {
+      width: percentage(7/12);
+    }// @include mq(wide)
+  }// .l-main
+
+  .l-aside {
+    margin-top: 20px;
+    @include mq(tab) {
+      float: right;
+      width: percentage(8/12);
+    }// @include mq(tab)
+    @include mq(pc) {
+    }// @include mq(pc)
+    @include mq(wide) {
+      width: percentage(3/12);
+      margin-top: 0;
+    }// @include mq(wide)
+  }// .l-aside
+
+}// .l-article
+
+.grid-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  text-align: center;
+  background: rgba(red, .23);
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
+}// .grid-inner
+
+.column-debug {
+  width: calc((100% - 24px * 12) / 12);
+  margin-right: $ct_margin;
+  margin-left: $ct_margin;
+  background: rgba(blue, .23);
+  float: left;
+  height: 80px;
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
+}// .column-debug
+
+
+/**
 /* footer
 --------------------------------------------- */
-#footer {
-  @if $type == all {// set All Devices and SmartPhone
-    width: 100%;
-  } @else if $type == tab {// set Tablet
-  } @else if $type == pc {// set PC
-  }// @if
-}// #footer
+.l-footer {
+  width: $site_width;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
+}// .l-footer

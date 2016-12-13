@@ -7,8 +7,10 @@
 /* main
 --------------------------------------------- */
 #main {
-  @if $type == all {// set All Devices and SmartPhone
-  } @else if $type == tab {// set Tablet
-  } @else if $type == pc {// set PC
-  }// @if
+  @include mq(tab) {
+  }// @include mq(tab)
+  @include mq(pc) {
+  }// @include mq(pc)
+  @include mq(wide) {
+  }// @include mq(wide)
 }// #main
