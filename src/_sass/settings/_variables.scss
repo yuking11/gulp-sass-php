@@ -8,22 +8,26 @@
 // ---------------------------------------------
 
 // Browser support
-$support_ie6: false;
-$support_ie7: false;
 $support_ie8: false;
-$support_ie9: true;
+$support_ie9: false;
 @if (not $support_ie8) and $support_ie9 {
   $experimental-support-for-svg: true;
 }
+
+// Media Query
+$mq-breakpoints: (
+  'tab'  : 600px,
+  'pc'   : 960px,
+  'wide' : 1281px,
+);
+
 
 // Css config
 // ---------------------------------------------
 
 // Assign Site Width
-$ct_margin: 40px;
-$main_width: 760px;
-$side_width: 200px;
-$base_width: $main_width + $side_width + $ct_margin;
+$site_width: 1140px;
+$ct_margin: 12px;
 
 // Use sprite
 $use_sprite: false;
@@ -44,6 +48,8 @@ $use_css_utility: true;
 
 // Base font-size
 $font_size: 16;
+// Base line-height
+$line_height: 1.6;
 
 // Base font-family
 $font_family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
@@ -51,9 +57,6 @@ $font_family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 
 // Element
 // ---------------------------------------------
-
-// Base line-height
-$line_height: 1.6;
 
 // element margin
 $base_mg: 10px;
