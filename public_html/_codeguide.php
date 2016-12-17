@@ -32,8 +32,8 @@
     <h1>Nivo Lightbox</h1>
     <ul>
       <li>
-        <a class="popup" href="http://www.coobal.co.jp/common/img/_sample/1.jpg" data-lightbox-type="iframe" data-lightbox-gallery="gallery1" title="This is Image.">
-          <img src="http://www.coobal.co.jp/common/img/_sample/1.jpg" width="80" alt="sample">
+        <a class="popup" href="<?php echo HTTP; ?>/assets/images/sprites/home001.png" data-lightbox-type="iframe" data-lightbox-gallery="gallery1" title="This is Image.">
+          <img src="<?php echo HTTP; ?>/assets/images/sprites/home001.png" width="80" alt="sample">
         </a>
       </li>
       <li>
