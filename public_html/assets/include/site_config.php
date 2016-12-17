@@ -1,5 +1,8 @@
 <?php
 
+  // ブラウザアクセス拒否
+  if ( basename($_SERVER['SCRIPT_FILENAME']) === basename(__FILE__) ) { exit; }
+
   /*
    * URL設定
   */
@@ -8,8 +11,8 @@
   $base_url .= '://' . $_SERVER['HTTP_HOST'];
 
   $host = $_SERVER["HTTP_HOST"];
-  $host_productions = array('example.com', 'www.exaplem.com');
-  $host_develop = 'example.com.s-rep.net';
+  $host_productions = array('example.com', 'www.example.com');
+  $host_develop = 'hoge.local.dev';
   $host_local  = 'localhost'.strstr($host, ':');
 
   if( in_array($host, $host_productions) ) {
@@ -28,17 +31,15 @@
    * 関数
   */
   function is_local() {
-    $domain      = 'example.com';
     $host        = $_SERVER["HTTP_HOST"];
     $host_local  = 'localhost'.strstr($host, ':');
     $host_locals = array(
                       $host_local,
-                      'coding-team.private.s-rep.net',
-                      'coding-team.'.$domain.'.s-rep.net'
+                      'hoge.local.dev',
                     );
     return in_array($host, $host_locals);
   }
-  function home_url( $atts ) {
+  function home_url( $atts = null ) {
     if( !empty($atts) ){
       $url = HTTP . $atts;
     } else {
@@ -46,7 +47,7 @@
     }
     return $url;
   }
-  function get_template_directory_uri( $atts ) {
+  function get_template_directory_uri( $atts = null ) {
     if( !empty($atts) ){
       $url = HTTP . '/assets' . $atts;
     } else {

@@ -7,28 +7,55 @@
 /* top_page
 --------------------------------------------- */
 #top_page {
-  @if $type == all {// set All Devices and SmartPhone
-    @include rds;
-    @include grad;
-    @include ib(top);
-    @include hr;
-    @include box;
-    @include bs;
-    @include trf( rotate(1deg) );
-    @include trs;
-    display: flex;
-    opacity: .8;
-    user-select: none;
-    appearance: none;
-  } @else if $type == tab {// set Tablet
-  } @else if $type == pc {// set PC
-  }// @if
+  // @include rds;
+  // @include grad;
+  // background: linear-gradient(to left, #f00, #00f, #0f0);
+  // @include hr(#f00, #00f, 10px);
+  // @include ib(top);
+  // @include box;
+  // @include bs;
+  // @include trf( rotate(1deg) );
+  // @include trs;
+  // display: flex;
+  // opacity: .8;
+  // user-select: none;
+  // appearance: none;
+  // @include angled-edge('outside bottom','lower right', rgba(#EE3924, .6), 2800, 100);
+  margin: 10px;
+  @include mq(tab) {
+    margin: 20px;
+  }
+  @include mq(pc) {
+    margin: 30px;
+  }
+  @include mq(wide) {
+    margin: 40px;
+  }
 }// #top_page
 
 .test {
-  @if $type == all {// set All Devices and SmartPhone
+  padding: 10px;
+  @include mq(tab) {
+    padding: 20px;
+  }// @include mq(tab)
+  @include mq(pc) {
+    padding: 30px;
+  }// @include mq(pc)
+  @include mq(wide) {
+    padding: 40px;
+  }// @include mq(wide)
+
+  .test-inner {
     margin: 10px;
-  } @else if $type == tab {// set Tablet
-  } @else if $type == pc {// set PC
-  }// @if
-}
+    @include mq(tab) {
+      margin: 20px;
+    }// @include mq(tab)
+    @include mq(pc) {
+      margin: 30px;
+    }// @include mq(pc)
+    @include mq(wide) {
+      margin: 40px;
+    }// @include mq(wide)
+  }// .test-inner
+
+}// .test

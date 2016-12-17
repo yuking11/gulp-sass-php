@@ -1,4 +1,3 @@
-
 <?php
   $slug = 'slug';// includeなどの条件分岐用
 	$slug_child = 'slug_child';// includeなどの条件分岐用
@@ -17,22 +16,50 @@
 	include_once(dirname(__FILE__) . "/assets/include/_nav.php");
 ?>
 
+<div id="top_page">hoge</div>
 
-<div id="ct_wp">
+<div class="l-wrap">
+  <div class="l-article">
 
-	<div id="main">
-		<main role="main">
+    <div class="grid-item l-guest">
+      <div class="grid-inner">
+        Guest Area
+      </div>
+    </div>
+    <!-- /.grid-item l-guest -->
 
-			<div class="test">test2</div>
-
-		</main>
-	</div><!-- /#main -->
+    <main class="grid-item l-main" role="main">
+      <div class="grid-inner">
+        Main Contents
+      </div>
+    </main>
+    <!-- /.grid-item l-main -->
 
 <?php
-	include_once(dirname(__FILE__) . "/assets/include/_side.php");
+    include_once(dirname(__FILE__) . "/assets/include/_side.php");
 ?>
 
-</div><!-- /#ct_wp -->
+  </div>
+  <!-- /.l-article -->
+</div>
+<!-- /.l-wrap -->
+
+<div class="l-wrap">
+  <div class="l-article">
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+    <div class="column-debug"></div>
+  </div>
+</div>
 
 <?php
 	include_once(dirname(__FILE__) . "/assets/include/_footer.php");

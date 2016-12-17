@@ -8,9 +8,7 @@
 /* header
 --------------------------------------------- */
 .l-header {
-  width: $site_width;
-  margin-right: auto;
-  margin-left: auto;
+  @include l-center($site_width);
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
@@ -24,9 +22,7 @@
 /* nav
 --------------------------------------------- */
 .l-nav {
-  width: $site_width;
-  margin-right: auto;
-  margin-left: auto;
+  @include l-center($site_width);
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
@@ -40,9 +36,7 @@
  * Contents Wrapper
 --------------------------------------------- */
 .l-wrap {
-  max-width: $site_width;
-  margin-right: auto;
-  margin-left: auto;
+  @include l-center($site_width, true);
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
@@ -63,8 +57,8 @@
   .grid-item {
     @include mq(tab) {
       float: left;
-      padding-right: $ct_margin;
-      padding-left: $ct_margin;
+      padding-right: $ct_gutter;
+      padding-left: $ct_gutter;
     }// @include mq(tab)
     @include mq(pc) {
     }// @include mq(pc)
@@ -131,8 +125,8 @@
 
 .column-debug {
   width: calc((100% - 24px * 12) / 12);
-  margin-right: $ct_margin;
-  margin-left: $ct_margin;
+  margin-right: $ct_gutter;
+  margin-left: $ct_gutter;
   background: rgba(blue, .23);
   float: left;
   height: 80px;
@@ -149,9 +143,7 @@
 /* footer
 --------------------------------------------- */
 .l-footer {
-  width: $site_width;
-  margin-right: auto;
-  margin-left: auto;
+  @include l-center($site_width);
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
