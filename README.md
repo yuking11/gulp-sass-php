@@ -41,13 +41,13 @@ gulpを利用したhtml5（php）テンプレート。
 
 ### ブラウザレギュレーション
 
-#### Windows 7+
+#### Windows 10
 
 - IE 11
 - Google Chrome+
 - Mozilla Firefox+
 
-#### Mac OS X (10.9+)
+#### macOS (10.11+)
 
 - Safari
 
@@ -81,20 +81,22 @@ gulpを利用したhtml5（php）テンプレート。
 
 #### package.json
 
-- "browser-sync": "^2.7.7",
-- "gulp": "^3.9.0",
-- "gulp-autoprefixer": "^2.3.1",
-- "gulp-concat": "^2.5.2",
-- "gulp-consolidate": "^0.1.2",
-- "gulp-cssmin": "^0.1.7",
-- "gulp-iconfont": "^1.0.0",
-- "gulp-load-plugins": "^1.0.0-rc.1",
-- "gulp-plumber": "^1.0.1",
-- "gulp-rename": "^1.2.2",
-- "gulp-sass": "^2.0.4",
-- "gulp-uglify": "^1.2.0",
-- "gulp.spritesmith": "^4.0.0",
-- "lodash": "^2.4.1"
+- "browser-sync": "^2.7.7"
+- "gulp": "^3.9.0"
+- "gulp-autoprefixer": "^3.1.1"
+- "gulp-concat": "^2.5.2"
+- "gulp-consolidate": "^0.2.0"
+- "gulp-cssmin": "^0.1.7"
+- "gulp-group-css-media-queries": "^1.2.0"
+- "gulp-iconfont": "^8.0.1"
+- "gulp-load-plugins": "^1.0.0-rc.1"
+- "gulp-plumber": "^1.0.1"
+- "gulp-rename": "^1.2.2"
+- "gulp-sass": "^3.0.0"
+- "gulp-uglify": "^2.0.0"
+- "gulp.spritesmith": "^6.2.1"
+- "lodash": "^4.17.2"
+
 
 ## ディレクトリ構造
 
@@ -187,6 +189,8 @@ _sass/
 |     |— _mixin_font.scss
 |     |— _mixin_gradient.scss
 |     |— _mixin_icon.scss
+|     |— _mixin_layout.scss
+|     |— _mixin_mediaquery.scss
 |     |— _mixin_position.scss
 |     |— _mixin_text.scss
 |     `— _mixins.scss     // importファイル
@@ -218,7 +222,8 @@ _sass/
 |     |     |— _form.scss
 |     |     |— _setcion.scss
 |     |     |— _table.scss
-|     |     `— _title.scss
+|     |     |— _title.scss
+|     |     `— _ui.scss
 |     |
 |     `— _partials.scss  // import用
 |
@@ -242,6 +247,7 @@ _sass/
 
 ## 更新履歴
 
+- 16/12/16 - 利用パッケージ更新
 - 16/03/03 - autoprefixerのバージョン指定変更
 - 15/09/17 - タブ切り替えjs追加
 - 15/09/01 - スムーズスクロールのjsを修正
