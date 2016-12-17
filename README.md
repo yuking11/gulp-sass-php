@@ -135,7 +135,7 @@ example.com/
 |     |     |     `— site_config.php
 |     |     |
 |     |     |— javascripts/
-|     |     |     |— libs/
+|     |     |     |— vendor/
 |     |     |     |     |- jquery.*.min.js
 |     |     |     |     ...
 |     |     |     |
@@ -247,6 +247,8 @@ _sass/
 
 ## 更新履歴
 
+- 16/12/16 - jQueryを3.1.1にUP
+- 16/12/16 - regacyIE対応除外
 - 16/12/16 - 利用パッケージ更新
 - 16/03/03 - autoprefixerのバージョン指定変更
 - 15/09/17 - タブ切り替えjs追加
