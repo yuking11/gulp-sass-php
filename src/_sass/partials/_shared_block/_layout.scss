@@ -8,7 +8,7 @@
 /* header
 --------------------------------------------- */
 .l-header {
-  @include l-center($site_width);
+  @include l-center($site_width, true);
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
@@ -22,7 +22,7 @@
 /* nav
 --------------------------------------------- */
 .l-nav {
-  @include l-center($site_width);
+  @include l-center($site_width, true);
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
@@ -46,7 +46,8 @@
 }
 
 .l-article {
-  @include cf;
+  display: flex;
+  flex-wrap: wrap;
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
@@ -54,82 +55,81 @@
   @include mq(wide) {
   }// @include mq(wide)
 
-  .grid-item {
+  .grid_item {
+    width: 100%;
+    padding-right: $ct_gutter;
+    padding-left: $ct_gutter;
     @include mq(tab) {
-      float: left;
-      padding-right: $ct_gutter;
-      padding-left: $ct_gutter;
+      // float: left;
     }// @include mq(tab)
     @include mq(pc) {
     }// @include mq(pc)
     @include mq(wide) {
     }// @include mq(wide)
-  }// .grid-item
+  }// .grid_item
 
   .l-guest {
     @include mq(tab) {
-      float: left;
+      // float: left;
       width: percentage(4/12);
     }// @include mq(tab)
     @include mq(pc) {
+      width: percentage(2/12);
     }// @include mq(pc)
     @include mq(wide) {
-      width: percentage(2/12);
     }// @include mq(wide)
   }// .l-guest
 
   .l-main {
     margin-top: 20px;
     @include mq(tab) {
-      float: left;
+      // float: left;
       width: percentage(8/12);
       margin-top: 0;
     }// @include mq(tab)
     @include mq(pc) {
+      width: percentage(7/12);
     }// @include mq(pc)
     @include mq(wide) {
-      width: percentage(7/12);
     }// @include mq(wide)
   }// .l-main
 
   .l-aside {
     margin-top: 20px;
     @include mq(tab) {
-      float: right;
+      // float: right;
       width: percentage(8/12);
+      margin-left: auto;
     }// @include mq(tab)
     @include mq(pc) {
-    }// @include mq(pc)
-    @include mq(wide) {
       width: percentage(3/12);
       margin-top: 0;
+    }// @include mq(pc)
+    @include mq(wide) {
     }// @include mq(wide)
   }// .l-aside
 
 }// .l-article
 
-.grid-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grid_inner {
+  background: rgba(#f00, .25);
   height: 80px;
   text-align: center;
-  background: rgba(red, .23);
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
   }// @include mq(pc)
   @include mq(wide) {
   }// @include mq(wide)
-}// .grid-inner
+}// .grid_inner
 
 .column-debug {
-  width: calc((100% - 24px * 12) / 12);
+  flex: 1;
+  background: rgba(blue, .25);
+  // width: calc((100% - 24px * 12) / 12);
+  height: 80px;
   margin-right: $ct_gutter;
   margin-left: $ct_gutter;
-  background: rgba(blue, .23);
-  float: left;
-  height: 80px;
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
@@ -143,7 +143,7 @@
 /* footer
 --------------------------------------------- */
 .l-footer {
-  @include l-center($site_width);
+  @include l-center($site_width, true);
   @include mq(tab) {
   }// @include mq(tab)
   @include mq(pc) {
