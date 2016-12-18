@@ -1,10 +1,10 @@
 @charset "utf-8";
 /*!
-* (c) 2014 Coobal Inc.
-* @project : example.com
-* @guideline : http://coding-manual.s-rep.net/guideline/
-* @version : 1
-* @author: Coobal Production-Unit yuking11
+* (c) 2016 yuking11.net
+* @project : yuking11.net
+* @guideline : http://guideline.yuking11.net
+* @version : 2
+* @author: @Yuking11
 */
 
 // ===========================================
@@ -23,7 +23,9 @@
 // ===========================================
 // デフォルトCSS
 // ===========================================
-@import "base/reset";// HTML5 doctor reset css
+@import "base/ress";// ress a morden CSS reset
+// @import "base/reset";// HTML5 doctor reset css
+// @import "base/normalize";// Normalize.css
 @import "base/default";
 
 // ===========================================

@@ -13,14 +13,15 @@ html {
   -webkit-font-smoothing: antialiased;
   overflow-y: scroll;
   @include fs($font_size);
-  @include box;
+  // @include box;// ress.scss
 }
 
-*,
-*:before,
-*:after {
-  @include box(inherit);
-}
+// ress.scss
+// *,
+// *:before,
+// *:after {
+//   @include box(inherit);
+// }
 
 // body
 body {
