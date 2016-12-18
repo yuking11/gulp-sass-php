@@ -1,8 +1,8 @@
 
 <footer class="l-footer" role="contentinfo">
-  <div class="footer__inner">
+  <div class="footer_inner">
     footer
   </div>
-  <!-- /.footer__inner -->
+  <!-- /.footer_inner -->
 </footer>
 <!-- /.l-footer -->

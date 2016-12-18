@@ -21,19 +21,19 @@
 <div class="l-wrap">
   <div class="l-article">
 
-    <div class="grid-item l-guest">
-      <div class="grid-inner">
+    <div class="grid_item l-guest">
+      <div class="grid_inner">
         Guest Area
       </div>
     </div>
-    <!-- /.grid-item l-guest -->
+    <!-- /.grid_item l-guest -->
 
-    <main class="grid-item l-main" role="main">
-      <div class="grid-inner">
+    <main class="grid_item l-main" role="main">
+      <div class="grid_inner">
         Main Contents
       </div>
     </main>
-    <!-- /.grid-item l-main -->
+    <!-- /.grid_item l-main -->
 
 <?php
     include_once(dirname(__FILE__) . "/assets/include/_side.php");

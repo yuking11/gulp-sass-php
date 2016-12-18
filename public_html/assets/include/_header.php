@@ -1,8 +1,8 @@
 
 <header class="l-header" role="banner">
-  <div class="header__inner">
+  <div class="header_inner">
     header
   </div>
-  <!-- /.header__inner -->
+  <!-- /.header_inner -->
 </header>
 <!-- /.l-header -->

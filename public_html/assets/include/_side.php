@@ -1,6 +1,6 @@
 
-<aside class="grid-item l-aside">
-  <div class="grid-inner">
+<aside class="grid_item l-aside">
+  <div class="grid_inner">
     Aside Area
   </div>
 </aside>
