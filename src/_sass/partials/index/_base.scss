@@ -59,3 +59,93 @@
   }// .test-inner
 
 }// .test
+
+.sample_img {
+  width: 360px;
+  height: 200px;
+  margin: .5%;
+}// .sample_img
+
+.no-effect {
+  background: url('../images/sample.jpg') no-repeat left top;
+}// .no-effect
+
+.pencil-effect {
+  @include pencil-effect('../images/sample.jpg');
+}// .pencil-effect
+
+.watercolor-effect {
+  @include watercolor-effect('../images/sample.jpg');
+}// .watercolor-effect
+
+.emboss-effect {
+  @include emboss-effect('../images/sample.jpg');
+}// .emboss-effect
+
+.colored-pencil-effect {
+  @include colored-pencil-effect('../images/sample.jpg');
+}// .colored-pencil-effect
+
+.chalkboard-effect {
+  @include chalkboard-effect('../images/sample.jpg');
+}// .chalkboard-effect
+
+.colored-chalkboard-effect {
+  @include colored-chalkboard-effect('../images/sample.jpg');
+}// .colored-chalkboard-effect
+
+.airbrush-effect {
+  @include airbrush-effect('../images/sample.jpg');
+}// .airbrush-effect
+
+.hallucination-effect {
+  @include hallucination-effect('../images/sample.jpg');
+}// .hallucination-effect
+
+.flannel-effect {
+  @include flannel-effect('../images/sample.jpg');
+}// .flannel-effect
+
+.low-ink-x-effect {
+  @include low-ink-x-effect('../images/sample.jpg');
+}// .low-ink-x-effect
+
+.low-ink-y-effect {
+  @include low-ink-y-effect('../images/sample.jpg');
+}// .low-ink-y-effect
+
+.collage-effect {
+  @include collage-effect('../images/sample.jpg');
+}// .collage-effect
+
+.mosaic-effect {
+  @include mosaic-effect('../images/sample.jpg');
+}// .mosaic-effect
+
+.photo-border-effect {
+  @include photo-border-effect('../images/sample.jpg');
+}// .photo-border-effect
+
+.infrared-effect {
+  @include infrared-effect('../images/sample.jpg');
+}// .infrared-effect
+
+.night-vision-effect {
+  @include night-vision-effect('../images/sample.jpg');
+}// .night-vision-effect
+
+.warhol-effect {
+  @include warhol-effect('../images/sample.jpg');
+}// .warhol-effect
+
+.selective-color-effect {
+  @include selective-color-effect('../images/sample.jpg');
+}// .selective-color-effect
+
+.mirror-x-effect {
+  @include mirror-x-effect('../images/sample.jpg');
+}// .mirror-x-effect
+
+.mirror-y-effect {
+  @include mirror-y-effect('../images/sample.jpg');
+}// .mirror-y-effect

@@ -61,6 +61,32 @@
   </div>
 </div>
 
+<div class="l-wrap mt20 mb20">
+  <div class="l-article">
+    <div class="no-effect sample_img" title="default"></div>
+    <div class="pencil-effect sample_img" title="pencil-effect"></div>
+    <div class="watercolor-effect sample_img" title="watercolor-effect"></div>
+    <div class="emboss-effect sample_img" title="emboss-effect"></div>
+    <div class="colored-pencil-effect sample_img" title="colored-pencil-effect"></div>
+    <div class="chalkboard-effect sample_img" title="chalkboard-effect"></div>
+    <div class="colored-chalkboard-effect sample_img" title="colored-chalkboard-effect"></div>
+    <div class="airbrush-effect sample_img" title="airbrush-effect"></div>
+    <div class="hallucination-effect sample_img" title="hallucination-effect"></div>
+    <div class="flannel-effect sample_img" title="flannel-effect"></div>
+    <div class="low-ink-x-effect sample_img" title="low-ink-x-effect"></div>
+    <div class="low-ink-y-effect sample_img" title="low-ink-y-effect"></div>
+    <div class="collage-effect sample_img" title="collage-effect"></div>
+    <div class="mosaic-effect sample_img" title="mosaic-effect"></div>
+    <div class="photo-border-effect sample_img" title="photo-border-effect"></div>
+    <div class="infrared-effect sample_img" title="infrared-effect"></div>
+    <div class="night-vision-effect sample_img" title="night-vision-effect"></div>
+    <div class="warhol-effect sample_img" title="warhol-effect"></div>
+    <div class="selective-color-effect sample_img" title="selective-color-effect"></div>
+    <div class="mirror-x-effect sample_img" title="mirror-x-effect"></div>
+    <div class="mirror-y-effect sample_img" title="mirror-y-effect"></div>
+  </div>
+</div>
+
 <?php
 	include_once(dirname(__FILE__) . "/assets/include/_footer.php");
 	include_once(dirname(__FILE__) . "/assets/include/_end_of_body.php");
